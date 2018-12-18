@@ -11,6 +11,8 @@
     <p>This fork was created to refocus the software on its original core functionalities and values, that is the work of a teacher in a classroom, privileging the ease of use</p>
   </description>
   <url type="homepage">http://www.openboard.ch</url>
+  <url type="bugtracker">https://github.com/OpenBoard-org/OpenBoard/issues</url>
+  <url type="help">http://openboard.ch/support.en.html</url>
   <launchable type="desktop-id">ch.openboard.OpenBoard.desktop</launchable>
   <screenshots>
     <screenshot>
