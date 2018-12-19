@@ -16,8 +16,16 @@
   <launchable type="desktop-id">ch.openboard.OpenBoard.desktop</launchable>
   <screenshots>
     <screenshot>
+      <caption>File browser</caption>
+      <image type="source">https://www.imgload.org/images/openboard-screenshot3558eae6a8b145d09.png</image>
+    </screenshot>
+    <screenshot>
+      <caption>Web browser</caption>
+      <image type="source">https://www.imgload.org/images/openboard-screenshot2dcbcb955dabe8967.png</image>
+    </screenshot>
+    <screenshot>
       <caption>Board mode</caption>
-      <image type="source">https://www.imgload.org/images/openboard-screenshotde006463ef0e5603.png</image>
+      <image type="source">https://www.imgload.org/images/openboard-screenshot134104bf2845eb1fc.png</image>
     </screenshot>
   </screenshots>
   <releases>
