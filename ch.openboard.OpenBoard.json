@@ -76,6 +76,11 @@
                     "tag": "v1.5.1",
                     "commit": "afb5b65458d9173f35cb811a5e61b9c62a2f0e69"
                 },
+                {
+                    /* must be done before calling qmake, or translations will not be installed (?) */
+                    "type" : "shell",
+                    "commands" : [ "lrelease OpenBoard.pro" ]
+                },
                 { "type": "patch", "path": "patches/0001-Add-compatibility-with-OpenSSL-1.1.patch" },
                 { "type": "patch", "path": "patches/0002-Rewrite-libs.pri.patch" },
                 { "type": "patch", "path": "patches/0003-Use-libpoppler-instead-of-raw-xpdf.patch" },
