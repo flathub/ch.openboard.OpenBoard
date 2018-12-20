@@ -44,8 +44,7 @@ modules:
       - INCLUDEPATH += ${FLATPAK_DEST}/include/QtWebKit
       - INCLUDEPATH += ${FLATPAK_DEST}/include/QtWebKitWidgets
       - INCLUDEPATH += ${FLATPAK_DEST}/include/poppler
-      - INSTALL_ROOT = /
-      - PREFIX = /app/
+      - PREFIX = ${FLATPAK_DEST}
     build-commands:
       - install -Dm644 -t /app/share/appdata ${FLATPAK_ID}.appdata.xml
     build-options:
