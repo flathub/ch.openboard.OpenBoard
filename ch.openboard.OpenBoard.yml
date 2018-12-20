@@ -20,12 +20,14 @@ modules:
       - type: archive
         url: https://github.com/stachenov/quazip/archive/0.7.6.tar.gz
         sha256: 4118a830a375a81211956611cc34b1b5b4ddc108c126287b91b40c2493046b70
+
   - name: openjpeg
     buildsystem: cmake-ninja
     sources:
       - type: archive
         url: https://github.com/uclouvain/openjpeg/archive/v2.3.0.tar.gz
         sha256: 3dc787c1bb6023ba846c2a0d9b1f6e179f1cd255172bde9eb75b01f1e6c7d71a
+
   - name: poppler
     buildsystem: cmake-ninja
     config-opts:
@@ -34,20 +36,21 @@ modules:
       - type: archive
         url: https://poppler.freedesktop.org/poppler-0.72.0.tar.xz
         sha256: c1747eb8f26e9e753c4001ed951db2896edc1021b6d0f547a0bd2a27c30ada51
+
   - name: openboard
     buildsystem: qmake
     config-opts:
-      - INCLUDEPATH += /app/include/quazip
-      - INCLUDEPATH += /app/include/QtWebKit
-      - INCLUDEPATH += /app/include/QtWebKitWidgets
-      - INCLUDEPATH += /app/include/poppler
-      - QT -= webkit
-      - QT -= webkitwidgets
-      - LIBS += -L/app/lib/ -L/usr/lib/ -lQt5WebKit -lQt5WebKitWidgets
+      - INCLUDEPATH += ${FLATPAK_DEST}/include/quazip
+      - INCLUDEPATH += ${FLATPAK_DEST}/include/QtWebKit
+      - INCLUDEPATH += ${FLATPAK_DEST}/include/QtWebKitWidgets
+      - INCLUDEPATH += ${FLATPAK_DEST}/include/poppler
       - INSTALL_ROOT = /
       - PREFIX = /app/
     build-commands:
       - install -Dm644 -t /app/share/appdata ${FLATPAK_ID}.appdata.xml
+    build-options:
+      env:
+        QMAKEPATH: "/app/lib"
     sources:
       - type: git
         url: https://github.com/openboard-org/openboard
@@ -72,7 +75,5 @@ modules:
         path: patches/0007-Use-QStandardPaths-to-locate-resources.patch
       - type: patch
         path: patches/0008-Add-svg-icon.patch
-      - type: patch
-        path: patches/0009-Flatpak-Workaround-Don-t-check-for-webkit-as-Qt-modu.patch
       - type: file
         path: ch.openboard.OpenBoard.appdata.xml
