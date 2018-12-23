@@ -3,23 +3,24 @@
   <id>ch.openboard.OpenBoard</id>
   <name>OpenBoard</name>
   <summary>Interactive whiteboard for schools and universities</summary>
-  <summary xml:lang="pt_BR">Quadro branco interativo para escolas e universidades</summary>
   <summary xml:lang="es">Cuadro blanco interactivo para escuelas y universidades</summary>
-  <project_license>GPL-3.0</project_license>
+  <summary xml:lang="nb">Interaktiv tavle for skoler og universiteter</summary>
+  <summary xml:lang="pt_BR">Quadro branco interativo para escolas e universidades</summary>
+  <project_license>GPL-3.0-only</project_license>
   <metadata_license>CC0-1.0</metadata_license>
   <developer_name>Département de l'Instruction Publique (DIP-SEM)</developer_name>
   <description>
-    <p>OpenBoard is an open source cross-platform interactive white board application designed primarily for use in schools. It was originally forked from Open-Sankoré, which was itself based on Uniboard.</p>
-    <p>This fork was created to refocus the software on its original core functionalities and values, that is the work of a teacher in a classroom, privileging the ease of use</p>
+    <p>OpenBoard is an open source cross-platform teaching software for interactive whiteboard designed primarily for use in schools and universities. It can be used both with interactive whiteboards or in a dual-screen setup with a pen-tablet display and a beamer.</p>
+    <p xml:lang="es">OpenBoard es un software de enseñanza de plataforma cruzada de código abierto para cuadros interactivos diseñado principalmente para uso en escuelas y universidades. Se puede utilizar con marcos interactivos o en una configuración de pantalla dual con un monitor de escritorio gráfico y un proyector.</p>
+    <p xml:lang="nb">OpenBoard er et kryssplattform og åpen kildekode undervisningsprogram for interaktive tavler, spesielt designet for bruk i skoler og universiteter. Det kan brukes både med interaktive tavler eller i et dobbelt skjermoppsett med tegnebrett med skjerm og projektor.</p>
+    <p xml:lang="pt_BR">O OpenBoard é um software de ensino de plataforma cruzada de código aberto para quadros interativos projetado principalmente para uso em escolas e universidades. Ele pode ser usado com quadros interativos ou em uma configuração de tela dupla com um monitor de mesa gráfica e um projetor.</p>
   </description>
-  <description xml:lang="pt_BR"><p>O OpenBoard é um software de ensino de plataforma cruzada de código aberto para quadros interativos projetado principalmente para uso em escolas e universidades. Ele pode ser usado com quadros interativos ou em uma configuração de tela dupla com um monitor de mesa gráfica e um projetor.</p></description>
-  <description xml:lang="es"><p>OpenBoard es un software de enseñanza de plataforma cruzada de código abierto para cuadros interactivos diseñado principalmente para uso en escuelas y universidades. Se puede utilizar con marcos interactivos o en una configuración de pantalla dual con un monitor de escritorio gráfico y un proyector.</p></description>
   <url type="homepage">http://www.openboard.ch</url>
   <url type="bugtracker">https://github.com/OpenBoard-org/OpenBoard/issues</url>
   <url type="help">http://openboard.ch/support.en.html</url>
   <launchable type="desktop-id">ch.openboard.OpenBoard.desktop</launchable>
   <screenshots>
-    <screenshot>
+    <screenshot type="default">
       <caption>Board mode</caption>
       <image type="source">https://www.imgload.org/images/openboard-screenshot134104bf2845eb1fc.png</image>
     </screenshot>
