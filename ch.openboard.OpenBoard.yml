@@ -46,7 +46,7 @@ modules:
       - INCLUDEPATH += ${FLATPAK_DEST}/include/poppler
       - PREFIX = ${FLATPAK_DEST}
     build-commands:
-      - install -Dm644 -t /app/share/appdata ${FLATPAK_ID}.appdata.xml
+      - install -Dm644 -t ${FLATPAK_DEST}/share/appdata ${FLATPAK_ID}.appdata.xml
     build-options:
       env:
         QMAKEPATH: "/app/lib"
@@ -76,3 +76,11 @@ modules:
         path: patches/0008-Add-svg-icon.patch
       - type: file
         path: ch.openboard.OpenBoard.appdata.xml
+
+  - name: openboard-importer
+    buildsystem: qmake
+    sources:
+      - type: git
+        url: https://github.com/OpenBoard-Org/OpenBoard-Importer
+    build-commands:
+      - install -Dm755 -t ${FLATPAK_DEST}/bin/ OpenBoardImporter
