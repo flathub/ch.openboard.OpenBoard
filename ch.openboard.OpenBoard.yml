@@ -53,8 +53,8 @@ modules:
     sources:
       - type: git
         url: https://github.com/openboard-org/openboard
-        tag: v1.5.1
-        commit: afb5b65458d9173f35cb811a5e61b9c62a2f0e69
+        tag: v1.5.2
+        commit: d932ae1a42d00ba27acf7cd87a7f914a49fc67f4
       - type: shell
         commands:
           - lrelease OpenBoard.pro
