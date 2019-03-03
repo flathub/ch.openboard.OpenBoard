@@ -12,6 +12,7 @@ finish-args:
   - --filesystem=home
 separate-locales: false
 base: io.qt.qtwebkit.BaseApp
+base-version: '5.12'
 branch: stable
 modules:
   - name: quazip
@@ -58,6 +59,8 @@ modules:
       - type: shell
         commands:
           - lrelease OpenBoard.pro
+          - mkdir QtWebKit -p
+          - echo "#include <QtWebKit/QWebView>" > QtWebKit/QWebView
       - type: patch
         path: patches/0001-Add-compatibility-with-OpenSSL-1.1.patch
       - type: patch
