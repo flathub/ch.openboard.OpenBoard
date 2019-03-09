@@ -1,7 +1,7 @@
-From ba3c413a26e697856de0fe6ec30073bc63a8a3ca Mon Sep 17 00:00:00 2001
+From 6bfc24cfb7c17903c062e5db0da91e34b66122fa Mon Sep 17 00:00:00 2001
 From: =?UTF-8?q?Jonah=20Br=C3=BCchert?= <jbb.prv@gmx.de>
 Date: Tue, 11 Dec 2018 14:52:27 +0100
-Subject: [PATCH 6/9] Update library names
+Subject: [PATCH 4/8] Update library names
 
 ---
  src/podcast/podcast.pri | 2 +-
@@ -21,5 +21,5 @@ index 7e6ea9ee..2a25400f 100644
      UBUNTU_VERSION = $$system(lsb_release -irs)
      equals(UBUNTU_VERSION, Ubuntu 14.04) {
 -- 
-2.19.2
+2.20.1
 

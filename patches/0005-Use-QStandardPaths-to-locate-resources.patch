@@ -1,7 +1,7 @@
-From 3dcea20792dbbd835ad85998ea2c301ae5e8ced1 Mon Sep 17 00:00:00 2001
+From 7378d8bebc9c958f8d9877d3d07faa01cda356b0 Mon Sep 17 00:00:00 2001
 From: =?UTF-8?q?Jonah=20Br=C3=BCchert?= <jbb.prv@gmx.de>
 Date: Tue, 11 Dec 2018 18:45:20 +0100
-Subject: [PATCH 7/9] Use QStandardPaths to locate resources
+Subject: [PATCH 5/8] Use QStandardPaths to locate resources
 
 ---
  src/frameworks/UBPlatformUtils_linux.cpp | 9 ++++++++-
@@ -35,5 +35,5 @@ index de5bdb9f..52c6e30c 100644
  
  void UBPlatformUtils::hideFile(const QString &filePath)
 -- 
-2.19.2
+2.20.1
 
