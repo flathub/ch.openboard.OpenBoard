@@ -32,7 +32,7 @@ modules:
   - name: poppler
     buildsystem: cmake-ninja
     config-opts:
-      - -DENABLE_XPDF_HEADERS=ON
+      - -DENABLE_UNSTABLE_API_ABI_HEADERS=ON
     sources:
       - type: archive
         url: https://poppler.freedesktop.org/poppler-0.74.0.tar.xz
