@@ -62,11 +62,8 @@ modules:
         branch: dev
 #        tag: v1.5.2
 #        commit: d932ae1a42d00ba27acf7cd87a7f914a49fc67f4
-      - type: shell
-        commands:
-          - lrelease OpenBoard.pro
-          - mkdir QtWebKit -p
-          - echo "#include <QtWebKit/QWebView>" > QtWebKit/QWebView
+      - type: patch
+        path: patches/0001-Finish-renaming-of-ukranian-translation.patch
       - type: patch
         path: patches/0001-Rewrite-libs.pri.patch
       - type: patch
@@ -83,6 +80,11 @@ modules:
         path: patches/0008-pro-Remove-UB_THIRDPARTY_INTERACTIVE.patch
       - type: file
         path: ch.openboard.OpenBoard.appdata.xml
+      - type: shell
+        commands:
+          - lrelease OpenBoard.pro
+          - mkdir QtWebKit -p
+          - echo "#include <QtWebKit/QWebView>" > QtWebKit/QWebView
 
   - name: openboard-importer
     buildsystem: qmake
