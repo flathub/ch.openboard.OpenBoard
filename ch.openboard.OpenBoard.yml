@@ -63,8 +63,6 @@ modules:
 #        tag: v1.5.2
 #        commit: d932ae1a42d00ba27acf7cd87a7f914a49fc67f4
       - type: patch
-        path: patches/0001-Finish-renaming-of-ukranian-translation.patch
-      - type: patch
         path: patches/0001-Rewrite-libs.pri.patch
       - type: patch
         path: patches/0002-Use-libpoppler-instead-of-raw-xpdf.patch

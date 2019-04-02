@@ -1,4 +1,4 @@
-From ad6668feaeab1f23b1cae79c0113679f64f82e32 Mon Sep 17 00:00:00 2001
+From 0dd38868c2b3516036a37209e16c29f8b242e8aa Mon Sep 17 00:00:00 2001
 From: =?UTF-8?q?Jonah=20Br=C3=BCchert?= <jbb.prv@gmx.de>
 Date: Thu, 13 Dec 2018 21:55:00 +0100
 Subject: [PATCH 6/8] Add svg icon
@@ -10,7 +10,7 @@ Subject: [PATCH 6/8] Add svg icon
  create mode 100644 resources/images/ch.openboard.OpenBoard.svg
 
 diff --git a/OpenBoard.pro b/OpenBoard.pro
-index e7e8c77c..fcb36c4f 100644
+index 88920af5..26909a6a 100644
 --- a/OpenBoard.pro
 +++ b/OpenBoard.pro
 @@ -85,7 +85,7 @@ UB_LIBRARY.files = resources/library

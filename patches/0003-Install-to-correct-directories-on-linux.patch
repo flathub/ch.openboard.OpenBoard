@@ -1,4 +1,4 @@
-From 4a0b02b236510e6ad269a8b73190bc9bc4b9f7d5 Mon Sep 17 00:00:00 2001
+From eaec7cd88f9eb6c7277aa1179e163a3557a53827 Mon Sep 17 00:00:00 2001
 From: =?UTF-8?q?Jonah=20Br=C3=BCchert?= <jbb.prv@gmx.de>
 Date: Mon, 10 Dec 2018 20:41:00 +0100
 Subject: [PATCH 3/8] Install to correct directories on linux
@@ -15,7 +15,7 @@ Installs desktop file, icon, binary and library
  rename resources/images/{OpenBoard.png => ch.openboard.OpenBoard.png} (100%)
 
 diff --git a/OpenBoard.pro b/OpenBoard.pro
-index a13f462d..e7e8c77c 100644
+index a6b76091..88920af5 100644
 --- a/OpenBoard.pro
 +++ b/OpenBoard.pro
 @@ -1,4 +1,4 @@
@@ -147,7 +147,7 @@ similarity index 100%
 rename from resources/images/OpenBoard.png
 rename to resources/images/ch.openboard.OpenBoard.png
 diff --git a/src/core/UBApplication.cpp b/src/core/UBApplication.cpp
-index c8692290..3bc1884f 100644
+index 194ea6e4..957d491d 100644
 --- a/src/core/UBApplication.cpp
 +++ b/src/core/UBApplication.cpp
 @@ -131,7 +131,7 @@ UBApplication::UBApplication(const QString &id, int &argc, char **argv) : QtSing

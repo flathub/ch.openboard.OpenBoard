@@ -1,4 +1,4 @@
-From 7378d8bebc9c958f8d9877d3d07faa01cda356b0 Mon Sep 17 00:00:00 2001
+From b6f1cd86b73aeb75e6cad5bdf3c41da8a6cd8f48 Mon Sep 17 00:00:00 2001
 From: =?UTF-8?q?Jonah=20Br=C3=BCchert?= <jbb.prv@gmx.de>
 Date: Tue, 11 Dec 2018 18:45:20 +0100
 Subject: [PATCH 5/8] Use QStandardPaths to locate resources
