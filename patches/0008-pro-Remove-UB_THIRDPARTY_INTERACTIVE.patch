@@ -1,14 +1,14 @@
-From ca2359a097b73b765148538c70b85899c0a471a5 Mon Sep 17 00:00:00 2001
+From 4a7edda608689f22ef4a9dec7fc014c52d862743 Mon Sep 17 00:00:00 2001
 From: =?UTF-8?q?Jonah=20Br=C3=BCchert?= <jbb.prv@gmx.de>
 Date: Thu, 28 Mar 2019 16:19:06 +0100
-Subject: [PATCH 8/8] pro: Remove UB_THIRDPARTY_INTERACTIVE
+Subject: [PATCH 8/9] pro: Remove UB_THIRDPARTY_INTERACTIVE
 
 ---
  OpenBoard.pro | 6 ------
  1 file changed, 6 deletions(-)
 
 diff --git a/OpenBoard.pro b/OpenBoard.pro
-index 26909a6a..7c4c2e1a 100644
+index f1a48622..f97d948d 100644
 --- a/OpenBoard.pro
 +++ b/OpenBoard.pro
 @@ -83,7 +83,6 @@ UB_ETC.files = resources/etc

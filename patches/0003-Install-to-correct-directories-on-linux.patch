@@ -1,7 +1,7 @@
-From eaec7cd88f9eb6c7277aa1179e163a3557a53827 Mon Sep 17 00:00:00 2001
+From 9026253cee943fdb733988312d51693f5648f5e7 Mon Sep 17 00:00:00 2001
 From: =?UTF-8?q?Jonah=20Br=C3=BCchert?= <jbb.prv@gmx.de>
 Date: Mon, 10 Dec 2018 20:41:00 +0100
-Subject: [PATCH 3/8] Install to correct directories on linux
+Subject: [PATCH 3/9] Install to correct directories on linux
 
 Installs desktop file, icon, binary and library
 ---
@@ -15,7 +15,7 @@ Installs desktop file, icon, binary and library
  rename resources/images/{OpenBoard.png => ch.openboard.OpenBoard.png} (100%)
 
 diff --git a/OpenBoard.pro b/OpenBoard.pro
-index a6b76091..88920af5 100644
+index 2f4e845c..769a238f 100644
 --- a/OpenBoard.pro
 +++ b/OpenBoard.pro
 @@ -1,4 +1,4 @@

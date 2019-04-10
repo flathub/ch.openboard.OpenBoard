@@ -1,0 +1,43 @@
+From b76fb87ae190eed257c3635f456cac6a95699f97 Mon Sep 17 00:00:00 2001
+From: =?UTF-8?q?Jonah=20Br=C3=BCchert?= <jbb.prv@gmx.de>
+Date: Sat, 6 Apr 2019 00:42:23 +0200
+Subject: [PATCH 9/9] podcast.pri: port to pkgconfig
+
+---
+ src/podcast/podcast.pri | 19 +++++--------------
+ 1 file changed, 5 insertions(+), 14 deletions(-)
+
+diff --git a/src/podcast/podcast.pri b/src/podcast/podcast.pri
+index 2a25400f..5c2c3a03 100644
+--- a/src/podcast/podcast.pri
++++ b/src/podcast/podcast.pri
+@@ -60,21 +60,12 @@ linux-g++* {
+                 src/podcast/ffmpeg/UBMicrophoneInput.cpp
+ 
+ 
+-    DEPENDPATH += /usr/lib/x86_64-linux-gnu
+-
+-    LIBS += -lavformat -lavcodec -lswscale -lavutil \
+-            -lva-x11 \
+-            -lva \
+-            -lxcb-shm \
+-            -lxcb-xfixes \
+-            -lxcb-render -lxcb-shape -lxcb -lX11 -lasound -lpthread -llzma -lbz2 -lz -ldl -lswresample -lswscale -lavutil -lm
+-
+-    UBUNTU_VERSION = $$system(lsb_release -irs)
+-    equals(UBUNTU_VERSION, Ubuntu 14.04) {
+-        LIBS -= -lswresample
+-        LIBS += -lavresample
+-    }
++    PKGCONFIG += libavformat libavcodec libavutil libswresample libswscale
+ 
++    packagesExist(libavresample) {
++        PKGCONFIG -= libswresample
++        PKGCONFIG += libavresample
++    }
+ 
+     QMAKE_CXXFLAGS += -std=c++11 # move this to OpenBoard.pro when we can use C++11 on all platforms
+ }
+-- 
+2.20.1
+

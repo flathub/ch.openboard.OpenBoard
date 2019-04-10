@@ -1,7 +1,7 @@
-From bf5abf57a6183ccc699399553a5a882bfd1c39a3 Mon Sep 17 00:00:00 2001
+From 723d26e1c27f4f3b66ffb4fa2e84096386e16acc Mon Sep 17 00:00:00 2001
 From: =?UTF-8?q?Jonah=20Br=C3=BCchert?= <jbb.prv@gmx.de>
 Date: Mon, 10 Dec 2018 20:38:26 +0100
-Subject: [PATCH 2/8] Use libpoppler instead of raw xpdf
+Subject: [PATCH 2/9] Use libpoppler instead of raw xpdf
 
 ---
  src/pdf/XPDFRenderer.cpp | 33 +++++++++++++++++++++++----------

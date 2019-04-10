@@ -60,8 +60,8 @@ modules:
       - type: git
         url: https://github.com/openboard-org/openboard
         branch: dev
-#        tag: v1.5.2
-#        commit: d932ae1a42d00ba27acf7cd87a7f914a49fc67f4
+        tag: v1.5.3
+        commit: 426b1f7a19f5b6d12f8ad8944a109f5a8aadfaab
       - type: patch
         path: patches/0001-Rewrite-libs.pri.patch
       - type: patch
@@ -76,6 +76,8 @@ modules:
         path: patches/0006-Add-svg-icon.patch
       - type: patch
         path: patches/0008-pro-Remove-UB_THIRDPARTY_INTERACTIVE.patch
+      - type: patch
+        path: patches/0009-podcast.pri-port-to-pkgconfig.patch
       - type: file
         path: ch.openboard.OpenBoard.appdata.xml
       - type: shell
