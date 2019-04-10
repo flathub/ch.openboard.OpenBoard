@@ -14,6 +14,9 @@ separate-locales: false
 base: io.qt.qtwebkit.BaseApp
 base-version: '5.12'
 branch: stable
+cleanup:
+  - /include
+  - /lib/pkgconfig
 modules:
   - name: quazip
     buildsystem: qmake
@@ -31,6 +34,8 @@ modules:
 
   - name: poppler
     buildsystem: cmake-ninja
+    cleanup:
+      - /bin/
     config-opts:
       - -DENABLE_UNSTABLE_API_ABI_HEADERS=ON
       - -DENABLE_CPP=ON
