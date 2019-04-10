@@ -59,7 +59,6 @@ modules:
     sources:
       - type: git
         url: https://github.com/openboard-org/openboard
-        branch: dev
         tag: v1.5.3
         commit: 426b1f7a19f5b6d12f8ad8944a109f5a8aadfaab
       - type: patch
