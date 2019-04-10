@@ -82,6 +82,8 @@ modules:
         path: patches/0008-pro-Remove-UB_THIRDPARTY_INTERACTIVE.patch
       - type: patch
         path: patches/0009-podcast.pri-port-to-pkgconfig.patch
+      - type: patch
+        path: patches/0010-Linux-Only-use-onboard-by-default-if-it-s-installed.patch
       - type: file
         path: ch.openboard.OpenBoard.appdata.xml
       - type: shell
