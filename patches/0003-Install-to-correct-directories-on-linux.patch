@@ -1,7 +1,7 @@
-From 2f2e107e01658a6c3b0ab99ffa9d3553d3ff0379 Mon Sep 17 00:00:00 2001
+From 9026253cee943fdb733988312d51693f5648f5e7 Mon Sep 17 00:00:00 2001
 From: =?UTF-8?q?Jonah=20Br=C3=BCchert?= <jbb.prv@gmx.de>
 Date: Mon, 10 Dec 2018 20:41:00 +0100
-Subject: [PATCH 5/9] Install to correct directories on linux
+Subject: [PATCH 3/9] Install to correct directories on linux
 
 Installs desktop file, icon, binary and library
 ---
@@ -15,7 +15,7 @@ Installs desktop file, icon, binary and library
  rename resources/images/{OpenBoard.png => ch.openboard.OpenBoard.png} (100%)
 
 diff --git a/OpenBoard.pro b/OpenBoard.pro
-index 82f5aa71..5e26e3f4 100644
+index 2f4e845c..769a238f 100644
 --- a/OpenBoard.pro
 +++ b/OpenBoard.pro
 @@ -1,4 +1,4 @@
@@ -47,7 +47,7 @@ index 82f5aa71..5e26e3f4 100644
  OBJECTS_DIR = $$BUILD_DIR/objects
  MOC_DIR = $$BUILD_DIR/moc
  RCC_DIR = $$BUILD_DIR/rcc
-@@ -176,14 +178,15 @@ macx {
+@@ -182,14 +184,15 @@ macx {
     QMAKE_CXXFLAGS_RELEASE += -gdwarf-2 \
         -mdynamic-no-pic
  
@@ -66,7 +66,7 @@ index 82f5aa71..5e26e3f4 100644
     UB_ETC.files = "resources/etc"
     UB_ETC.path = "$$RESOURCES_DIR"
     UB_LIBRARY.files = "resources/library"
-@@ -411,6 +414,10 @@ macx {
+@@ -417,6 +420,10 @@ macx {
  }
  
  linux-g++* {
@@ -77,7 +77,7 @@ index 82f5aa71..5e26e3f4 100644
      CONFIG += link_prl
      LIBS += -lcrypto
      #LIBS += -lprofiler
-@@ -418,10 +425,12 @@ linux-g++* {
+@@ -424,10 +431,12 @@ linux-g++* {
      QMAKE_CFLAGS += -fopenmp
      QMAKE_CXXFLAGS += -fopenmp
      QMAKE_LFLAGS += -fopenmp
@@ -94,7 +94,7 @@ index 82f5aa71..5e26e3f4 100644
      system(mkdir -p $$BUILD_DIR)
      system(echo "$$VERSION" > $$BUILD_DIR/version)
      system(echo "$$LONG_VERSION" > $$BUILD_DIR/longversion)
-@@ -464,12 +473,14 @@ TRANSLATIONS = resources/i18n/OpenBoard_en.ts \
+@@ -470,12 +479,14 @@ TRANSLATIONS = resources/i18n/OpenBoard_en.ts \
     resources/i18n/OpenBoard_hu.ts \
     resources/i18n/OpenBoard_mg.ts
  
@@ -147,10 +147,10 @@ similarity index 100%
 rename from resources/images/OpenBoard.png
 rename to resources/images/ch.openboard.OpenBoard.png
 diff --git a/src/core/UBApplication.cpp b/src/core/UBApplication.cpp
-index a203da29..567d4dc6 100644
+index 194ea6e4..957d491d 100644
 --- a/src/core/UBApplication.cpp
 +++ b/src/core/UBApplication.cpp
-@@ -131,7 +131,7 @@ UBApplication::UBApplication(const QString &id, int &argc, char **argv) : QAppli
+@@ -131,7 +131,7 @@ UBApplication::UBApplication(const QString &id, int &argc, char **argv) : QtSing
      updateProtoActionsState();
  
  #ifndef Q_OS_OSX
@@ -160,5 +160,5 @@ index a203da29..567d4dc6 100644
  
      setStyle("fusion");
 -- 
-2.19.2
+2.20.1
 
