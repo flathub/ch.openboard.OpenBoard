@@ -1,7 +1,7 @@
 From 3fcd8308af98398056eba77cb48b2d6c84c4f500 Mon Sep 17 00:00:00 2001
 From: =?UTF-8?q?Jonah=20Br=C3=BCchert?= <jbb.prv@gmx.de>
 Date: Tue, 11 Dec 2018 14:52:27 +0100
-Subject: [PATCH 4/9] Update library names
+Subject: [PATCH 04/10] Update library names
 
 ---
  src/podcast/podcast.pri | 2 +-

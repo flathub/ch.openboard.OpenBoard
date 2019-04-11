@@ -1,7 +1,7 @@
-From b76fb87ae190eed257c3635f456cac6a95699f97 Mon Sep 17 00:00:00 2001
+From eea81dbc21e71b90311072d3626235d81a31b3c5 Mon Sep 17 00:00:00 2001
 From: =?UTF-8?q?Jonah=20Br=C3=BCchert?= <jbb.prv@gmx.de>
 Date: Sat, 6 Apr 2019 00:42:23 +0200
-Subject: [PATCH 9/9] podcast.pri: port to pkgconfig
+Subject: [PATCH 08/10] podcast.pri: port to pkgconfig
 
 ---
  src/podcast/podcast.pri | 19 +++++--------------

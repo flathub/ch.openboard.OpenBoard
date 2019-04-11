@@ -1,7 +1,7 @@
-From 47f0e6bcfb45708db279b3fb4e02179d3677c5e9 Mon Sep 17 00:00:00 2001
+From 1ef0bccea62ba08eae7ec778648453cada47e209 Mon Sep 17 00:00:00 2001
 From: =?UTF-8?q?Jonah=20Br=C3=BCchert?= <jbb.prv@gmx.de>
 Date: Wed, 10 Apr 2019 21:47:07 +0200
-Subject: [PATCH 10/10] Linux: Only use onboard by default if it's installed
+Subject: [PATCH 09/10] Linux: Only use onboard by default if it's installed
 
 ---
  resources/etc/OpenBoard.config |  1 -
