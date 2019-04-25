@@ -1,7 +1,7 @@
 From 9026253cee943fdb733988312d51693f5648f5e7 Mon Sep 17 00:00:00 2001
 From: =?UTF-8?q?Jonah=20Br=C3=BCchert?= <jbb.prv@gmx.de>
 Date: Mon, 10 Dec 2018 20:41:00 +0100
-Subject: [PATCH 03/10] Install to correct directories on linux
+Subject: [PATCH 03/11] Install to correct directories on linux
 
 Installs desktop file, icon, binary and library
 ---

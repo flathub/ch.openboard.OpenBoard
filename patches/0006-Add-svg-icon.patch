@@ -1,7 +1,7 @@
-From bb6900d847ecdaa0bcbd6139465e39cfc634ed54 Mon Sep 17 00:00:00 2001
+From 4310e708c8b80310b36fbf6254ec9b72698dc1ba Mon Sep 17 00:00:00 2001
 From: =?UTF-8?q?Jonah=20Br=C3=BCchert?= <jbb.prv@gmx.de>
 Date: Thu, 13 Dec 2018 21:55:00 +0100
-Subject: [PATCH 06/10] Add svg icon
+Subject: [PATCH 06/11] Add svg icon
 
 ---
  OpenBoard.pro                               | 4 ++--

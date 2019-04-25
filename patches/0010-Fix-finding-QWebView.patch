@@ -1,0 +1,25 @@
+From f8cb9f4d4beb48b12e21f2207f1b88d48df4dc16 Mon Sep 17 00:00:00 2001
+From: =?UTF-8?q?Jonah=20Br=C3=BCchert?= <jbb.prv@gmx.de>
+Date: Sun, 14 Apr 2019 22:48:43 +0200
+Subject: [PATCH 10/11] Fix finding QWebView
+
+---
+ resources/forms/trapFlash.ui | 2 +-
+ 1 file changed, 1 insertion(+), 1 deletion(-)
+
+diff --git a/resources/forms/trapFlash.ui b/resources/forms/trapFlash.ui
+index 56f31eda..64350729 100644
+--- a/resources/forms/trapFlash.ui
++++ b/resources/forms/trapFlash.ui
+@@ -113,7 +113,7 @@
+   <customwidget>
+    <class>QWebView</class>
+    <extends>QWidget</extends>
+-   <header>QtWebKit/QWebView</header>
++   <header>QWebView</header>
+   </customwidget>
+  </customwidgets>
+  <resources/>
+-- 
+2.20.1
+

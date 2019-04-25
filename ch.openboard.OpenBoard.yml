@@ -73,7 +73,7 @@ modules:
       - type: patch
         path: patches/0003-Install-to-correct-directories-on-linux.patch
       - type: patch
-        path: patches/0004-Update-library-names.patch
+        path: patches/0004-podcast.pri-port-to-pkgconfig.patch
       - type: patch
         path: patches/0005-Use-QStandardPaths-to-locate-resources.patch
       - type: patch
@@ -81,16 +81,13 @@ modules:
       - type: patch
         path: patches/0007-pro-Remove-UB_THIRDPARTY_INTERACTIVE.patch
       - type: patch
-        path: patches/0008-podcast.pri-port-to-pkgconfig.patch
+        path: patches/0008-Linux-Only-use-onboard-by-default-if-it-s-installed.patch
       - type: patch
-        path: patches/0009-Linux-Only-use-onboard-by-default-if-it-s-installed.patch
+        path: patches/0009-free-av_frame-data.patch
+      - type: patch
+        path: patches/0010-Fix-finding-QWebView.patch
       - type: file
         path: ch.openboard.OpenBoard.appdata.xml
-      - type: shell
-        commands:
-          - lrelease OpenBoard.pro
-          - mkdir QtWebKit -p
-          - echo "#include <QtWebKit/QWebView>" > QtWebKit/QWebView
 
   - name: openboard-importer
     buildsystem: qmake

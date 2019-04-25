@@ -1,0 +1,35 @@
+From 0185bd66e9ac6e38f401537d754ba92999a4d160 Mon Sep 17 00:00:00 2001
+From: bartoszek <bartoszek.github@bartus.33mail.com>
+Date: Wed, 10 Apr 2019 23:08:13 +0200
+Subject: [PATCH 09/11] free av_frame data
+
+fix massive memory leak in UBFFmpegVideoEncoderWorker::writeLatest{Video/Audio}Frame()
+resoulting from freeing av_frame without freeing its data.
+fix #222
+---
+ src/podcast/ffmpeg/UBFFmpegVideoEncoder.cpp | 2 ++
+ 1 file changed, 2 insertions(+)
+
+diff --git a/src/podcast/ffmpeg/UBFFmpegVideoEncoder.cpp b/src/podcast/ffmpeg/UBFFmpegVideoEncoder.cpp
+index c0eb9e9d..4773e0a9 100644
+--- a/src/podcast/ffmpeg/UBFFmpegVideoEncoder.cpp
++++ b/src/podcast/ffmpeg/UBFFmpegVideoEncoder.cpp
+@@ -744,6 +744,7 @@ void UBFFmpegVideoEncoderWorker::writeLatestVideoFrame()
+ {
+     AVFrame* frame = mImageQueue.dequeue();
+     writeFrame(frame, mVideoPacket, mController->mVideoStream, mController->mOutputFormatContext);
++    av_freep(&frame->data[0]);
+     av_frame_free(&frame);
+ }
+ 
+@@ -756,6 +757,7 @@ void UBFFmpegVideoEncoderWorker::writeLatestAudioFrame()
+ #if LIBAVFORMAT_VERSION_MICRO < 100
+     if (audio_samples_buffer) {
+         av_free(audio_samples_buffer);
++        av_freep(&frame->data[0]);
+         audio_samples_buffer = NULL;
+     }
+ #endif
+-- 
+2.20.1
+

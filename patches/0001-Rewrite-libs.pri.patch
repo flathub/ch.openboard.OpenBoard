@@ -1,7 +1,7 @@
 From 0b335a5f7a69dbcae19593cc89b1c243dae419d3 Mon Sep 17 00:00:00 2001
 From: =?UTF-8?q?Jonah=20Br=C3=BCchert?= <jbb.prv@gmx.de>
 Date: Mon, 10 Dec 2018 20:37:51 +0100
-Subject: [PATCH 01/10] Rewrite libs.pri
+Subject: [PATCH 01/11] Rewrite libs.pri
 
 ---
  OpenBoard.pro                       |  9 +--------
