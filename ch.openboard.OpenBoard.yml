@@ -64,8 +64,7 @@ modules:
     sources:
       - type: git
         url: https://github.com/openboard-org/openboard
-        tag: v1.5.3
-        commit: 426b1f7a19f5b6d12f8ad8944a109f5a8aadfaab
+        commit: 7dc58b7e606e77725232ed06355780a5ab6f1fb7
       - type: patch
         path: patches/0001-Rewrite-libs.pri.patch
       - type: patch
