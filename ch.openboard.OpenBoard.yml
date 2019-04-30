@@ -13,7 +13,7 @@ finish-args:
 separate-locales: false
 base: io.qt.qtwebkit.BaseApp
 base-version: '5.12'
-branch: stable
+default-branch": 'beta'
 cleanup:
   - /include
   - /lib/pkgconfig
