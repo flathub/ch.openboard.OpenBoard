@@ -33,6 +33,10 @@
       <image type="source">https://www.imgload.org/images/openboard-screenshot3558eae6a8b145d09.png</image>
     </screenshot>
   </screenshots>
+  <metadata>
+    <value key="GnomeSoftware::popular-background">https://raw.githubusercontent.com/flathub/ch.openboard.OpenBoard/master/ch.openboard.OpenBoard-thumb.png</value>
+  </metadata>
+  <content_rating type="oars-1.1" />
   <releases>
     <release version="1.5.3" date="2019-04-10" type="stable">
       <description>
