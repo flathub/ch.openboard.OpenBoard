@@ -1,7 +1,9 @@
-<?xml version="1.0" encoding="utf-8"?>
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- Copyright 2019 Jonah Brüchert -->
 <component type="desktop-application">
   <id>ch.openboard.OpenBoard</id>
   <name>OpenBoard</name>
+  <name xml:lang="es">OpenBoard</name>
   <summary>Interactive whiteboard for schools and universities</summary>
   <summary xml:lang="es">Cuadro blanco interactivo para escuelas y universidades</summary>
   <summary xml:lang="nb">Interaktiv tavle for skoler og universiteter</summary>
@@ -18,7 +20,10 @@
   <url type="homepage">http://www.openboard.ch</url>
   <url type="bugtracker">https://github.com/OpenBoard-org/OpenBoard/issues</url>
   <url type="help">http://openboard.ch/support.en.html</url>
-  <content_rating type="oars-1.0" />
+  <url type="translate">https://github.com/OpenBoard-org/openboard/pulls</url>
+  <content_rating type="oars-1.0"/>
+  <update_contact>jbb_AT_kaidan.im</update_contact>
+  <translation type="qt">OpenBoard</translation>
   <launchable type="desktop-id">ch.openboard.OpenBoard.desktop</launchable>
   <screenshots>
     <screenshot type="default">
@@ -39,33 +44,33 @@
   </metadata>
   <content_rating type="oars-1.1" />
   <releases>
-    <release version="1.5.3" date="2019-04-10" type="stable">
+    <release type="stable" date="2019-04-10" version="1.5.3">
       <description>
-        <p>New Features</p>
+        <p>New Features:</p>
         <ul>
-          <li>Support of OpenSSL 1.1 has been added on the three supported platforms. A special thanks to super7ramp for his help.</li>
+          <li>Support of OpenSSL 1.1 has been added on the three supported platforms. A special thanks to super7ramp for his help</li>
         </ul>
-        <p>Bug fixes</p>
+        <p>Bug fixes:</p>
         <ul>
-          <li>Some scaling issues could be experienced while exporting a document to PDF format.</li>
-          <li>An image could be lost after a page duplication followed by the deletion of the image on one of the two pages.</li>
-          <li>An image could be lost after the duplication of a page in Documents Mode.</li>
-          <li>When duplicating grouped objects of different types, the z-order was not preserved.</li>
-          <li>Perform "Set As Tool" on a flash animation could result on a crash.</li>
-          <li>Secured web pages was not loading on Windows internal navigator.</li>
-          <li>Slashes were allowed in folder's names.</li>
-          <li>Ukrainian translation's file extension is now uk, instead of ua. A special thanks to glixx for reporting it.</li>
+          <li>Some scaling issues could be experienced while exporting a document to PDF format</li>
+          <li>An image could be lost after a page duplication followed by the deletion of the image on one of the two pages</li>
+          <li>An image could be lost after the duplication of a page in Documents Mode</li>
+          <li>When duplicating grouped objects of different types, the z-order was not preserved</li>
+          <li>Perform "Set As Tool" on a flash animation could result on a crash</li>
+          <li>Secured web pages was not loading on Windows internal navigator</li>
+          <li>Slashes were allowed in folder's names</li>
+          <li>Ukrainian translation's file extension is now uk, instead of ua. A special thanks to glixx for reporting it</li>
         </ul>
-        <p>Known issues</p>
+        <p>Known issues:</p>
         <ul>
-          <li>The redesign of the Documents mode was a complex development and several small cosmetic bugs may still remain, including focus issues.</li>
-          <li>Some slow motion can be experienced in macOS while using drag and drop in the new document tree structure.</li>
+          <li>The redesign of the Documents mode was a complex development and several small cosmetic bugs may still remain, including focus issues</li>
+          <li>Some slow motion can be experienced in macOS while using drag and drop in the new document tree structure</li>
         </ul>
       </description>
     </release>
-    <release version="1.5.2" date="2019-01-22" type="stable" />
-    <release version="1.5.1" date="2018-12-13" type="stable" />
-    <release version="1.5.0" date="2018-11-29" type="stable" />
+    <release type="stable" date="2019-01-22" version="1.5.2"/>
+    <release type="stable" date="2018-12-13" version="1.5.1"/>
+    <release type="stable" date="2018-11-29" version="1.5.0"/>
   </releases>
   <provides>
     <binary>openboard</binary>
