@@ -66,6 +66,9 @@ modules:
         url: https://github.com/openboard-org/openboard
         tag: v1.5.3
         commit: 426b1f7a19f5b6d12f8ad8944a109f5a8aadfaab
+      - type: shell
+        commands:
+          - lrelease OpenBoard.pro
       - type: patch
         path: patches/0001-Rewrite-libs.pri.patch
       - type: patch
