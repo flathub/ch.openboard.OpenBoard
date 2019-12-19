@@ -25,12 +25,7 @@ modules:
         url: https://github.com/stachenov/quazip/archive/v0.8.1.tar.gz
         sha256: 4fda4d4248e08015b5090d0369ef9e68bdc4475aa12494f7c0f6d79e43270d14
 
-  - name: openjpeg
-    buildsystem: cmake-ninja
-    sources:
-      - type: archive
-        url: https://github.com/uclouvain/openjpeg/archive/v2.3.1.tar.gz
-        sha256: 63f5a4713ecafc86de51bfad89cc07bb788e9bba24ebbf0c4ca637621aadb6a9
+  - shared-modules/openjpeg/openjpeg.json
 
   - name: poppler
     buildsystem: cmake-ninja
