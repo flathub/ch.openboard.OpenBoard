@@ -1,7 +1,7 @@
-From f8cb9f4d4beb48b12e21f2207f1b88d48df4dc16 Mon Sep 17 00:00:00 2001
+From 4ca677dc8c3721e9a33952f77022c1055e353ae5 Mon Sep 17 00:00:00 2001
 From: =?UTF-8?q?Jonah=20Br=C3=BCchert?= <jbb.prv@gmx.de>
 Date: Sun, 14 Apr 2019 22:48:43 +0200
-Subject: [PATCH 10/11] Fix finding QWebView
+Subject: [PATCH 09/10] Fix finding QWebView
 
 ---
  resources/forms/trapFlash.ui | 2 +-
@@ -21,5 +21,5 @@ index 56f31eda..64350729 100644
   </customwidgets>
   <resources/>
 -- 
-2.20.1
+2.25.0
 

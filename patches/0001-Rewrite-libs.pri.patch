@@ -1,7 +1,7 @@
-From 0b335a5f7a69dbcae19593cc89b1c243dae419d3 Mon Sep 17 00:00:00 2001
+From c4e1826e95f85d7935073f6b19d221af6ffcf9cb Mon Sep 17 00:00:00 2001
 From: =?UTF-8?q?Jonah=20Br=C3=BCchert?= <jbb.prv@gmx.de>
 Date: Mon, 10 Dec 2018 20:37:51 +0100
-Subject: [PATCH 01/11] Rewrite libs.pri
+Subject: [PATCH 01/10] Rewrite libs.pri
 
 ---
  OpenBoard.pro                       |  9 +--------
@@ -11,7 +11,7 @@ Subject: [PATCH 01/11] Rewrite libs.pri
  create mode 100644 libs.pri
 
 diff --git a/OpenBoard.pro b/OpenBoard.pro
-index d21bb776..2f4e845c 100644
+index af3a0901..4ee73d10 100644
 --- a/OpenBoard.pro
 +++ b/OpenBoard.pro
 @@ -1,8 +1,6 @@
@@ -95,5 +95,5 @@ index f8214d5d..7923c42a 100644
      src/UBCFFAdaptor.cpp
  
 -- 
-2.20.1
+2.25.0
 

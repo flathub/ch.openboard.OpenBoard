@@ -1,17 +1,17 @@
-From 5e2a06085d3134c40e0600b1e98641e1e03c65d4 Mon Sep 17 00:00:00 2001
+From 4ea70e3b15c3d06299fb9bf38c9f983ca5667314 Mon Sep 17 00:00:00 2001
 From: =?UTF-8?q?Jonah=20Br=C3=BCchert?= <jbb.prv@gmx.de>
 Date: Thu, 28 Mar 2019 16:19:06 +0100
-Subject: [PATCH 07/11] pro: Remove UB_THIRDPARTY_INTERACTIVE
+Subject: [PATCH 07/10] pro: Remove UB_THIRDPARTY_INTERACTIVE
 
 ---
  OpenBoard.pro | 6 ------
  1 file changed, 6 deletions(-)
 
 diff --git a/OpenBoard.pro b/OpenBoard.pro
-index f1a48622..f97d948d 100644
+index d057a3fb..0bf8ea8b 100644
 --- a/OpenBoard.pro
 +++ b/OpenBoard.pro
-@@ -83,7 +83,6 @@ UB_ETC.files = resources/etc
+@@ -84,7 +84,6 @@ UB_ETC.files = resources/etc
  UB_I18N.files = resources/i18n/*.qm
  UB_LIBRARY.files = resources/library
  UB_FONTS.files = resources/fonts
@@ -19,7 +19,7 @@ index f1a48622..f97d948d 100644
  UB_DESKTOP.files = resources/ch.openboard.OpenBoard.desktop
  UB_ICON.files = resources/images/ch.openboard.OpenBoard.svg
  
-@@ -127,7 +126,6 @@ win32 {
+@@ -128,7 +127,6 @@ win32 {
     UB_LIBRARY.path = $$DESTDIR
     UB_I18N.path = $$DESTDIR/i18n
     UB_ETC.path = $$DESTDIR
@@ -27,7 +27,7 @@ index f1a48622..f97d948d 100644
     system(md $$replace(BUILD_DIR, /, \\))
     system(echo "$$VERSION" > $$BUILD_DIR/version)
     system(echo "$$LONG_VERSION" > $$BUILD_DIR/longversion)
-@@ -199,8 +197,6 @@ macx {
+@@ -201,8 +199,6 @@ macx {
     UB_LIBRARY.path = "$$RESOURCES_DIR"
     UB_FONTS.files = "resources/fonts"
     UB_FONTS.path = "$$RESOURCES_DIR"
@@ -36,7 +36,7 @@ index f1a48622..f97d948d 100644
     UB_MACX_ICNS.files = $$files(resources/macx/*.icns)
     UB_MACX_ICNS.path = "$$RESOURCES_DIR"
     UB_MACX_EXTRAS.files = "resources/macx/Save PDF to OpenBoard.workflow"
-@@ -403,7 +399,6 @@ macx {
+@@ -405,7 +401,6 @@ macx {
     QMAKE_BUNDLE_DATA += UB_ETC \
         UB_LIBRARY \
         UB_FONTS \
@@ -44,7 +44,7 @@ index f1a48622..f97d948d 100644
         UB_MACX_ICNS \
         UB_MACX_EXTRAS \
         SPARKLE_KEY \
-@@ -483,7 +478,6 @@ INSTALLS = UB_BINARY \
+@@ -485,7 +480,6 @@ INSTALLS = UB_BINARY \
     UB_ETC \
     UB_I18N \
     UB_LIBRARY \
@@ -53,5 +53,5 @@ index f1a48622..f97d948d 100644
     UB_ICON
  
 -- 
-2.20.1
+2.25.0
 

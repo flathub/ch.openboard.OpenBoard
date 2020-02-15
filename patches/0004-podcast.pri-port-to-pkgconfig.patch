@@ -1,17 +1,17 @@
-From 175b9def6b0d6d5b3918c420267eb3c7c1f10ad0 Mon Sep 17 00:00:00 2001
+From 6c5bf47a61624dacd0e3aa57f51e37485cf70b70 Mon Sep 17 00:00:00 2001
 From: =?UTF-8?q?Jonah=20Br=C3=BCchert?= <jbb.prv@gmx.de>
 Date: Tue, 11 Dec 2018 14:52:27 +0100
-Subject: [PATCH 04/11] podcast.pri: port to pkgconfig
+Subject: [PATCH 04/10] podcast.pri: port to pkgconfig
 
 ---
- src/podcast/podcast.pri | 19 +++++--------------
- 1 file changed, 5 insertions(+), 14 deletions(-)
+ src/podcast/podcast.pri | 16 +---------------
+ 1 file changed, 1 insertion(+), 15 deletions(-)
 
 diff --git a/src/podcast/podcast.pri b/src/podcast/podcast.pri
-index 7e6ea9ee..5c2c3a03 100644
+index e96263fa..11eff38b 100644
 --- a/src/podcast/podcast.pri
 +++ b/src/podcast/podcast.pri
-@@ -60,21 +60,12 @@ linux-g++* {
+@@ -60,21 +60,7 @@ linux-g++* {
                  src/podcast/ffmpeg/UBMicrophoneInput.cpp
  
  
@@ -24,20 +24,16 @@ index 7e6ea9ee..5c2c3a03 100644
 -            -lxcb-xfixes \
 -            -lxcb-render -lxcb-shape -lxcb -lX11 -lasound -lSDL -lx264 -lpthread -lvpx -lvorbisenc -lvorbis -ltheoraenc -ltheoradec -logg -lopus -lmp3lame -lfreetype -lfdk-aac -lass -llzma -lbz2 -lz -ldl -lswresample -lswscale -lavutil -lm
 -
--    UBUNTU_VERSION = $$system(lsb_release -irs)
--    equals(UBUNTU_VERSION, Ubuntu 14.04) {
+-    FFMPEG_VERSION = $$system(ffmpeg --version|& grep -oP "version.*?\K[0-9]\.[0-9]")
+-    equals(FFMPEG_VERSION, 2.8) {
 -        LIBS -= -lswresample
 -        LIBS += -lavresample
 -    }
+-
 +    PKGCONFIG += libavformat libavcodec libavutil libswresample libswscale
- 
-+    packagesExist(libavresample) {
-+        PKGCONFIG -= libswresample
-+        PKGCONFIG += libavresample
-+    }
  
      QMAKE_CXXFLAGS += -std=c++11 # move this to OpenBoard.pro when we can use C++11 on all platforms
  }
 -- 
-2.20.1
+2.25.0
 

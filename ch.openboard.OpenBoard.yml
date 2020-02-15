@@ -59,8 +59,8 @@ modules:
     sources:
       - type: git
         url: https://github.com/openboard-org/openboard
-        tag: v1.5.3
-        commit: 426b1f7a19f5b6d12f8ad8944a109f5a8aadfaab
+        tag: v1.5.4
+        commit: 85eb094ea9b876b559c8fd73e7fae1d7d9890903
       - type: shell
         commands:
           - lrelease OpenBoard.pro
@@ -81,9 +81,7 @@ modules:
       - type: patch
         path: patches/0008-Linux-Only-use-onboard-by-default-if-it-s-installed.patch
       - type: patch
-        path: patches/0009-free-av_frame-data.patch
-      - type: patch
-        path: patches/0010-Fix-finding-QWebView.patch
+        path: patches/0009-Fix-finding-QWebView.patch
       - type: file
         path: ch.openboard.OpenBoard.appdata.xml
 

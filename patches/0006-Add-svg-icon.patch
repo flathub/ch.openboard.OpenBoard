@@ -1,7 +1,7 @@
-From 4310e708c8b80310b36fbf6254ec9b72698dc1ba Mon Sep 17 00:00:00 2001
+From c55dd41f40ef52fa118782a6c79283c24fffa947 Mon Sep 17 00:00:00 2001
 From: =?UTF-8?q?Jonah=20Br=C3=BCchert?= <jbb.prv@gmx.de>
 Date: Thu, 13 Dec 2018 21:55:00 +0100
-Subject: [PATCH 06/11] Add svg icon
+Subject: [PATCH 06/10] Add svg icon
 
 ---
  OpenBoard.pro                               | 4 ++--
@@ -10,10 +10,10 @@ Subject: [PATCH 06/11] Add svg icon
  create mode 100644 resources/images/ch.openboard.OpenBoard.svg
 
 diff --git a/OpenBoard.pro b/OpenBoard.pro
-index 769a238f..f1a48622 100644
+index 6c54677c..d057a3fb 100644
 --- a/OpenBoard.pro
 +++ b/OpenBoard.pro
-@@ -85,7 +85,7 @@ UB_LIBRARY.files = resources/library
+@@ -86,7 +86,7 @@ UB_LIBRARY.files = resources/library
  UB_FONTS.files = resources/fonts
  UB_THIRDPARTY_INTERACTIVE.files = thirdparty/interactive
  UB_DESKTOP.files = resources/ch.openboard.OpenBoard.desktop
@@ -22,7 +22,7 @@ index 769a238f..f1a48622 100644
  
  DEFINES += NO_THIRD_PARTY_WARNINGS
  DEFINES += UBVERSION=\"\\\"$${LONG_VERSION}\"\\\" \
-@@ -436,7 +436,7 @@ linux-g++* {
+@@ -438,7 +438,7 @@ linux-g++* {
      UB_I18N.path = $$INSTALL_ROOT/$$PREFIX/share/OpenBoard/i18n/
      UB_ETC.path = $$INSTALL_ROOT/$$PREFIX/share/OpenBoard/
      UB_DESKTOP.path = $$INSTALL_ROOT/$$PREFIX/share/applications/
@@ -42,5 +42,5 @@ index 00000000..4eecaaa2
 +  <path fill="#f48c4f" d="M433 116l-20 35-27 45c-15 23-56 75-65 84-4 5-11 7-15 6-7-1-11-10-8-17a570 570 0 0 1 65-128l62-92c27-40 27-40 38-40 5 0 7 0 11 3s8 9 8 14-2 9-17 35l-14 26"/>
 +</svg>
 -- 
-2.20.1
+2.25.0
 
