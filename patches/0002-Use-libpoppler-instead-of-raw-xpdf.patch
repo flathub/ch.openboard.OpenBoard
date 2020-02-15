@@ -1,15 +1,28 @@
-From 723d26e1c27f4f3b66ffb4fa2e84096386e16acc Mon Sep 17 00:00:00 2001
+From c69085534baeebf446a36b3b8c1d47d8e8166fd8 Mon Sep 17 00:00:00 2001
 From: =?UTF-8?q?Jonah=20Br=C3=BCchert?= <jbb.prv@gmx.de>
 Date: Mon, 10 Dec 2018 20:38:26 +0100
-Subject: [PATCH 02/11] Use libpoppler instead of raw xpdf
+Subject: [PATCH 02/10] Use libpoppler instead of raw xpdf
 
 ---
- src/pdf/XPDFRenderer.cpp | 33 +++++++++++++++++++++++----------
+ OpenBoard.pro            |  1 +
+ src/pdf/XPDFRenderer.cpp | 41 ++++++++++++++++++++++++++++++----------
  src/pdf/XPDFRenderer.h   |  8 ++++----
- 2 files changed, 27 insertions(+), 14 deletions(-)
+ 3 files changed, 36 insertions(+), 14 deletions(-)
 
+diff --git a/OpenBoard.pro b/OpenBoard.pro
+index 4ee73d10..a5849b09 100644
+--- a/OpenBoard.pro
++++ b/OpenBoard.pro
+@@ -1,6 +1,7 @@
+ TARGET = "OpenBoard"
+ TEMPLATE = app
+ 
++CONFIG += c++14
+ CONFIG -= flat
+ CONFIG += debug_and_release \
+           no_include_pwd
 diff --git a/src/pdf/XPDFRenderer.cpp b/src/pdf/XPDFRenderer.cpp
-index a3e828e4..583882aa 100644
+index a3e828e4..a77ee49f 100644
 --- a/src/pdf/XPDFRenderer.cpp
 +++ b/src/pdf/XPDFRenderer.cpp
 @@ -32,6 +32,7 @@
@@ -20,7 +33,15 @@ index a3e828e4..583882aa 100644
  
  #include "core/memcheck.h"
  
-@@ -51,7 +52,7 @@ XPDFRenderer::XPDFRenderer(const QString &filename, bool importingFile)
+@@ -47,11 +48,15 @@ XPDFRenderer::XPDFRenderer(const QString &filename, bool importingFile)
+     {
+         // globalParams must be allocated once and never be deleted
+         // note that this is *not* an instance variable of this XPDFRenderer class
++#if POPPLER_VERSION_MAJOR > 0 || POPPLER_VERSION_MINOR >= 83
++        globalParams = std::make_unique<GlobalParams>();
++#else
+         globalParams = new GlobalParams(0);
++#endif
          globalParams->setupBaseFonts(QFile::encodeName(UBPlatformUtils::applicationResourcesDirectory() + "/" + "fonts").data());
      }
  
@@ -29,7 +50,20 @@ index a3e828e4..583882aa 100644
      sInstancesCount.ref();
  }
  
-@@ -99,16 +100,28 @@ QString XPDFRenderer::title() const
+@@ -70,8 +75,12 @@ XPDFRenderer::~XPDFRenderer()
+ 
+     if (sInstancesCount.loadAcquire() == 0 && globalParams)
+     {
++#if POPPLER_VERSION_MAJOR > 0 || POPPLER_VERSION_MINOR >= 83
++        globalParams.reset();
++#else
+         delete globalParams;
+         globalParams = 0;
++#endif
+     }
+ }
+ 
+@@ -99,16 +108,28 @@ QString XPDFRenderer::title() const
  {
      if (isValid())
      {
@@ -62,7 +96,7 @@ index a3e828e4..583882aa 100644
              }
          }
      }
-@@ -172,12 +185,12 @@ QImage* XPDFRenderer::createPDFImage(int pageNumber, qreal xscale, qreal yscale,
+@@ -172,12 +193,12 @@ QImage* XPDFRenderer::createPDFImage(int pageNumber, qreal xscale, qreal yscale,
          SplashColor paperColor = {0xFF, 0xFF, 0xFF}; // white
          if(mSplash)
              delete mSplash;
@@ -100,5 +134,5 @@ index 8ab200bc..003a2055 100644
  
  class PDFDoc;
 -- 
-2.20.1
+2.25.0
 

@@ -40,8 +40,8 @@ modules:
       - -DENABLE_GTK_DOC=OFF
     sources:
       - type: archive
-        url: https://poppler.freedesktop.org/poppler-0.78.0.tar.xz
-        sha256: 622fdd3187a7339c3b78b861b7cd820ea41ebce0609839ba28ee52c3387938c2
+        url: https://poppler.freedesktop.org/poppler-0.85.0.tar.xz
+        sha256: 2bc875eb323002ae6b287e09980473518e2b2ed6b5b7d2e1089e36a6cd00d94b
 
   - name: openboard
     buildsystem: qmake
