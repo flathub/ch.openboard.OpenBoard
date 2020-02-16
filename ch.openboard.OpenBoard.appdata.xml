@@ -44,6 +44,40 @@
   </metadata>
   <content_rating type="oars-1.1" />
   <releases>
+    <release type="stable" date="2020-02-01" version="1.5.4">
+      <description>
+        <p>New Features:</p>
+        <ul>
+          <li>Added a preference in the display tab to show/hide the date column on alphabetical sort</li>
+          <li>Text color is inverted on background changes (white/black only)</li>
+          <li>Last used color applied globally is persisted (until the user loads another document)</li>
+          <li>Added the Bstgreek font to resources</li>
+          <li>Added GETypoLibre improvements (made by Neuchâtel)</li>
+          <li>Added 4 shapes with 'nofill' property</li>
+          <li>Added two options to periodically delete old documents in trash (emptyTrashForOlderDocuments and emptyTrashDaysValue)</li>
+        </ul>
+        <p>Bug fixes</p>
+        <ul>
+          <li>Improved naming behavior (now accepts "/" in documents name and replaces it with "-" for folders)</li>
+          <li>A crash could occur when replacing active document during import</li>
+          <li>Improvements in the selection of another document when the current one selected is deleted</li>
+          <li>Fixed an issue where the text could be in interaction mode without being selected</li>
+          <li>Fixed several issues regarding text boxes</li>
+          <li>The 'updated-at' metadata was not updating on Documents Mode when a document was moved to trash</li>
+          <li>Improved scrolling behavior on thumbnails view</li>
+          <li>Improvements on click handling on thumbnails view</li>
+          <li>Changed background color of the pen preview circle to make it more visible on white background</li>
+          <li>Renamed documents were not automatically reordered</li>
+          <li>Improvements on German translation thanks to @gektor-de</li>
+          <li>Fixed some typo in German translation thanks to @odo2063</li>
+          <li>Fixed a massive memory leak in podcast thanks to @bartoszek</li>
+          <li>Improved ffmpeg version test (distribution agnostic) thanks to @bartoszek</li>
+          <li>Fixed UI with dark system themes thanks to @JBBgameich</li>
+          <li>Added background color to QMenu, QPushButton and QComboBox thanks to @JBBgameich</li>
+          <li>Updated Slovak translations @jrynik</li>
+        </ul>
+      </description>
+    </release>
     <release type="stable" date="2019-04-10" version="1.5.3">
       <description>
         <p>New Features:</p>
