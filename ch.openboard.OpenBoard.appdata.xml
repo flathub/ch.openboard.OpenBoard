@@ -16,10 +16,13 @@
     <p xml:lang="es">OpenBoard es un software de enseñanza de plataforma cruzada de código abierto para cuadros interactivos diseñado principalmente para uso en escuelas y universidades. Se puede utilizar con marcos interactivos o en una configuración de pantalla dual con un monitor de escritorio gráfico y un proyector.</p>
     <p xml:lang="nb">OpenBoard er et kryssplattform og åpen kildekode undervisningsprogram for interaktive tavler, spesielt designet for bruk i skoler og universiteter. Det kan brukes både med interaktive tavler eller i et dobbelt skjermoppsett med tegnebrett med skjerm og projektor.</p>
     <p xml:lang="pt_BR">O OpenBoard é um software de ensino de plataforma cruzada de código aberto para quadros interativos projetado principalmente para uso em escolas e universidades. Ele pode ser usado com quadros interativos ou em uma configuração de tela dupla com um monitor de mesa gráfica e um projetor.</p>
+    <p xml:lang="de">OpenBoard ist ein interaktives Open-Source-Whiteboard für den Einsatz in Schulen oder Universitäten. Es kann entweder mit einem interaktiven Whiteboard oder in einer Dual-Screen-Konfiguration mit einem digitalen Tablet und einem Beamer verwendet werden.</p>
+    <p xml:lang="fr">OpenBoard est un logiciel d’enseignement interactif pour TNI open source conçu pour être utilisé dans les écoles ou universités. Il peut être utilisé indifféremment avec un tableau blanc interactif ou dans une configuration à double écran avec tablette numérique et un beamer.</p>
+    <p xml:lang="it">OpenBoard è un'applicazione di lavagna interattiva open source e multipiattaforma progettata principalmente per l'uso nelle scuole e nelle università. Può essere usata sia con lavagne interattive che con uno schermo tavoletta a penna, con o senza un'impostazione a doppio schermo, ed un proiettore.</p>
   </description>
-  <url type="homepage">http://www.openboard.ch</url>
+  <url type="homepage">https://www.openboard.ch</url>
   <url type="bugtracker">https://github.com/OpenBoard-org/OpenBoard/issues</url>
-  <url type="help">http://openboard.ch/support.en.html</url>
+  <url type="help">https://openboard.ch/support.en.html</url>
   <url type="translate">https://github.com/OpenBoard-org/openboard/pulls</url>
   <content_rating type="oars-1.0"/>
   <update_contact>jbb_AT_kaidan.im</update_contact>
