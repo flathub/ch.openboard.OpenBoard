@@ -8,6 +8,9 @@
   <summary xml:lang="es">Cuadro blanco interactivo para escuelas y universidades</summary>
   <summary xml:lang="nb">Interaktiv tavle for skoler og universiteter</summary>
   <summary xml:lang="pt_BR">Quadro branco interativo para escolas e universidades</summary>
+  <summary xml:lang="de">Interaktives Whiteboard für Schulen und Universitäten</summary>
+  <summary xml:lang="fr">Tableau blanc interactif pour écoles et universités</summary>
+  <summary xml:lang="it">Lavagna interattiva per la scuola e l'università</summary>
   <project_license>GPL-3.0-only</project_license>
   <metadata_license>CC0-1.0</metadata_license>
   <developer_name>Département de l'Instruction Publique (DIP-SEM)</developer_name>
