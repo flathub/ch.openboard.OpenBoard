@@ -12,7 +12,7 @@ finish-args:
   - --filesystem=home
 separate-locales: false
 base: io.qt.qtwebkit.BaseApp
-base-version: '5.13'
+base-version: '5.14'
 branch: stable
 cleanup:
   - /include
