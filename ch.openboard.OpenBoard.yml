@@ -117,8 +117,8 @@ modules:
     - "--enable-decoder=theora"
     sources:
     - type: archive
-      url: https://www.ffmpeg.org/releases/ffmpeg-4.0.5.tar.xz
-      sha256: 13f258aa54e181cb3c49e35c12ab842f05e3b1d1588100567b2e53ebb0ef3972
+      url: https://www.ffmpeg.org/releases/ffmpeg-4.2.tar.xz
+      sha256: 023f10831a97ad93d798f53a3640e55cd564abfeba807ecbe8524dac4fedecd5
     cleanup:
     - "/app/include"
     - "/app/lib/pkgconfig"
