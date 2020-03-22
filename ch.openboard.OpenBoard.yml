@@ -10,7 +10,7 @@ finish-args:
   - --socket=wayland
   - --socket=pulseaudio
   - --device=dri
-  - --filesystem=home
+  - --filesystem=xdg-desktop
 separate-locales: false
 base: io.qt.qtwebkit.BaseApp
 base-version: '5.14'
@@ -128,9 +128,6 @@ modules:
     buildsystem: qmake
     config-opts:
       - INCLUDEPATH += ${FLATPAK_DEST}/include/quazip
-      - INCLUDEPATH += ${FLATPAK_DEST}/include/QtWebKit
-      - INCLUDEPATH += ${FLATPAK_DEST}/include/QtWebKitWidgets
-      - INCLUDEPATH += ${FLATPAK_DEST}/include/poppler
       - PREFIX = ${FLATPAK_DEST}
     build-commands:
       - install -Dm644 -t ${FLATPAK_DEST}/share/appdata ${FLATPAK_ID}.appdata.xml
