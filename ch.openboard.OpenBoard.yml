@@ -41,8 +41,8 @@ modules:
       - -DENABLE_GTK_DOC=OFF
     sources:
       - type: archive
-        url: https://poppler.freedesktop.org/poppler-0.86.0.tar.xz
-        sha256: 6ae8a0b9fde8718025e0034448329efe5fd38194a32ac38f84a1528203c1f9bc
+        url: https://poppler.freedesktop.org/poppler-0.87.0.tar.xz
+        sha256: 6f602b9c24c2d05780be93e7306201012e41459f289b8279a27a79431ad4150e
 
   - name: x264
     config-opts:
