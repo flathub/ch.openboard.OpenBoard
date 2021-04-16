@@ -49,6 +49,49 @@
     <value key="GnomeSoftware::popular-background">https://raw.githubusercontent.com/flathub/ch.openboard.OpenBoard/master/ch.openboard.OpenBoard-thumb.png</value>
   </metadata>
   <releases>
+    <release type="stable" date="2021-04-15" version="1.6.1">
+      <description>
+        <p>New features:</p>
+        <ul>
+          <li>upgraded to Qt 5.15</li>
+          <li>the laser pointer diameter is now configurable in the config file, thanks to @letsfindaway. You can modify its value by changing it in the config file (PointerDiameter in the Board section)</li>
+          <li>it is now possible to draw intermediate lines in the grid backgrounds, thanks to @letsfindaway. You can enable it by passing EnableIntermediateLines to true in the config file. Once we have time to test it, it might become enabled by default.</li>
+          <li>a new application called "Axes" has been added, thanks to @letsfindaway. it can be enabled by passing EnableToolAxes to true in the config file. Once we have time to test it, it might become enabled by default.</li>
+          <li>a new application called "Paper" (already available for a while in some Geneva schools) has been added, thanks to François Le Cléac'h</li>
+          <li>added an option do enable/disable the new work made to increase performances when zooming on a PDF enableQualityLossToIncreaseZoomPerfs (enabled by default)</li>
+          <li>added 4 shapes in the library</li>
+          <li>ported from QScriptEngine to QJSonDocument, thanks to @JBBgameich</li>
+          <li>updated russian translations, thanks to @mariiaalt</li>
+          <li>added a zoomBehavior parameter to test some features regarding PDF rendering performances, thanks to @jpapale</li>
+        </ul>
+        <p>Bug fixes:</p>
+        <ul>
+          <li>It was no longer possible to make a selection above a PDF background. In some cases, undo could cause the PDF to be detached from background.</li>
+          <li>added shortcuts events in the thumbnails view.</li>
+          <li>Object moves were not memorized when using the "magicFinger" tool.</li>
+          <li>Fixed several issues regarding UBX import.</li>
+          <li>Selected pen color was no longer visible on the main bar.</li>
+          <li>In a text-box, a resize was applied even when only changing the color of a text.</li>
+          <li>potential fix to the "screen overlapping" issue</li>
+          <li>metadatas were not correctly persisted when the last action was to deleted a page in Board Mode</li>
+          <li>fixed two issues regarding ubx files where import could fail if some folders and files had the same name</li>
+          <li>fixed an issue where rename a folder could break the folder's hierarchy</li>
+          <li>fixed the labels of the colors toolbar</li>
+          <li>fixed an issue where resizing widgets would scale them instead of resizing the viewport</li>
+          <li>fixed an issue where OpenBoard would crash if trying to drag and drop anything on the thumbnails view</li>
+          <li>fixed an issue with shortcuts on a german keyboard layout, thanks to @letsfindaway</li>
+          <li>fixed an issue where changing of stylus tool while input device is pressed could result on a crash, thanks to @letsfindaway</li>
+          <li>fixed an issue where eraser preview circle would not hide at input device release, thanks @letsfindaway</li>
+          <li>fixed two issues where pageCount metadata could be corrupted</li>
+          <li>fixed a number of uninitialized variable uses, thanks to @multun</li>
+          <li>fixed some polish translations, thanks to @marcin-serwin</li>
+        </ul>
+        <p>Known issues:</p>
+        <ul>
+          <li>In Desktop Mode, Gnome Dock should be set to bottom position to workaround the issue with the Openboard left palette not beeing usable from above it.</li>
+        </ul>
+      </description>
+    </release>
     <release type="stable" date="2020-02-01" version="1.5.4">
       <description>
         <p>New Features:</p>
