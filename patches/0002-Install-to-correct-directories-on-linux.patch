@@ -1,7 +1,7 @@
-From b45c00e694b193655908e90f576bcf4eb346f2fc Mon Sep 17 00:00:00 2001
+From 30bf5696f12497c60bef59654c0a38d93ba034bf Mon Sep 17 00:00:00 2001
 From: =?UTF-8?q?Jonah=20Br=C3=BCchert?= <jbb.prv@gmx.de>
 Date: Mon, 10 Dec 2018 20:41:00 +0100
-Subject: [PATCH 03/10] Install to correct directories on linux
+Subject: [PATCH 2/7] Install to correct directories on linux
 
 Installs desktop file, icon, binary and library
 ---
@@ -15,7 +15,7 @@ Installs desktop file, icon, binary and library
  rename resources/images/{OpenBoard.png => ch.openboard.OpenBoard.png} (100%)
 
 diff --git a/OpenBoard.pro b/OpenBoard.pro
-index a5849b09..6c54677c 100644
+index 39e803f5..f1c4333a 100644
 --- a/OpenBoard.pro
 +++ b/OpenBoard.pro
 @@ -1,4 +1,4 @@
@@ -24,7 +24,7 @@ index a5849b09..6c54677c 100644
  TEMPLATE = app
  
  CONFIG += c++14
-@@ -79,11 +79,14 @@ FORMS += resources/forms/mainWindow.ui \
+@@ -80,11 +80,14 @@ FORMS += resources/forms/mainWindow.ui \
     resources/forms/capturePublishing.ui \
     resources/forms/intranetPodcastPublishingDialog.ui
  
@@ -39,7 +39,7 @@ index a5849b09..6c54677c 100644
  
  DEFINES += NO_THIRD_PARTY_WARNINGS
  DEFINES += UBVERSION=\"\\\"$${LONG_VERSION}\"\\\" \
-@@ -102,7 +105,6 @@ CONFIG(release, debug|release) {
+@@ -103,7 +106,6 @@ CONFIG(release, debug|release) {
     CONFIG += warn_off
  }
  
@@ -47,7 +47,7 @@ index a5849b09..6c54677c 100644
  OBJECTS_DIR = $$BUILD_DIR/objects
  MOC_DIR = $$BUILD_DIR/moc
  RCC_DIR = $$BUILD_DIR/rcc
-@@ -184,14 +186,15 @@ macx {
+@@ -214,14 +216,15 @@ macx {
     QMAKE_CXXFLAGS_RELEASE += -gdwarf-2 \
         -mdynamic-no-pic
  
@@ -66,7 +66,7 @@ index a5849b09..6c54677c 100644
     UB_ETC.files = "resources/etc"
     UB_ETC.path = "$$RESOURCES_DIR"
     UB_LIBRARY.files = "resources/library"
-@@ -419,6 +422,10 @@ macx {
+@@ -449,6 +452,10 @@ macx {
  }
  
  linux-g++* {
@@ -77,7 +77,7 @@ index a5849b09..6c54677c 100644
      CONFIG += link_prl
      LIBS += -lcrypto
      #LIBS += -lprofiler
-@@ -426,10 +433,12 @@ linux-g++* {
+@@ -461,10 +468,12 @@ linux-g++* {
      QMAKE_CFLAGS += -fopenmp
      QMAKE_CXXFLAGS += -fopenmp
      QMAKE_LFLAGS += -fopenmp
@@ -94,7 +94,7 @@ index a5849b09..6c54677c 100644
      system(mkdir -p $$BUILD_DIR)
      system(echo "$$VERSION" > $$BUILD_DIR/version)
      system(echo "$$LONG_VERSION" > $$BUILD_DIR/longversion)
-@@ -472,12 +481,14 @@ TRANSLATIONS = resources/i18n/OpenBoard_en.ts \
+@@ -507,12 +516,14 @@ TRANSLATIONS = resources/i18n/OpenBoard_en.ts \
     resources/i18n/OpenBoard_hu.ts \
     resources/i18n/OpenBoard_mg.ts
  
@@ -113,7 +113,7 @@ index a5849b09..6c54677c 100644
      resources/images/moveDownDisabled.svg
 -
 diff --git a/resources/OpenBoard.qrc b/resources/OpenBoard.qrc
-index 3e41418a..af2509f4 100644
+index 480269c1..07c27288 100644
 --- a/resources/OpenBoard.qrc
 +++ b/resources/OpenBoard.qrc
 @@ -1,6 +1,6 @@
@@ -147,10 +147,10 @@ similarity index 100%
 rename from resources/images/OpenBoard.png
 rename to resources/images/ch.openboard.OpenBoard.png
 diff --git a/src/core/UBApplication.cpp b/src/core/UBApplication.cpp
-index 709aa678..f3968245 100644
+index b189c3b8..a7f6172d 100644
 --- a/src/core/UBApplication.cpp
 +++ b/src/core/UBApplication.cpp
-@@ -131,7 +131,7 @@ UBApplication::UBApplication(const QString &id, int &argc, char **argv) : QtSing
+@@ -130,7 +130,7 @@ UBApplication::UBApplication(const QString &id, int &argc, char **argv) : QtSing
      updateProtoActionsState();
  
  #ifndef Q_OS_OSX
@@ -160,5 +160,5 @@ index 709aa678..f3968245 100644
  
      setStyle("fusion");
 -- 
-2.25.0
+2.31.0
 

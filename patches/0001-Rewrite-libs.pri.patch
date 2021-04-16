@@ -1,49 +1,44 @@
-From c4e1826e95f85d7935073f6b19d221af6ffcf9cb Mon Sep 17 00:00:00 2001
+From 56417e0a4b0063b3ec83d1f31ab6b3080875cdcc Mon Sep 17 00:00:00 2001
 From: =?UTF-8?q?Jonah=20Br=C3=BCchert?= <jbb.prv@gmx.de>
 Date: Mon, 10 Dec 2018 20:37:51 +0100
-Subject: [PATCH 01/10] Rewrite libs.pri
+Subject: [PATCH 1/7] Rewrite libs.pri
 
 ---
- OpenBoard.pro                       |  9 +--------
+ OpenBoard.pro                       |  4 +++-
  libs.pri                            | 28 ++++++++++++++++++++++++++++
  plugins/cffadaptor/UBCFFAdaptor.pro |  5 -----
- 3 files changed, 29 insertions(+), 13 deletions(-)
+ 3 files changed, 31 insertions(+), 6 deletions(-)
  create mode 100644 libs.pri
 
 diff --git a/OpenBoard.pro b/OpenBoard.pro
-index af3a0901..4ee73d10 100644
+index 2de5b263..39e803f5 100644
 --- a/OpenBoard.pro
 +++ b/OpenBoard.pro
-@@ -1,8 +1,6 @@
- TARGET = "OpenBoard"
+@@ -2,6 +2,7 @@ TARGET = "OpenBoard"
  TEMPLATE = app
  
--THIRD_PARTY_PATH=../OpenBoard-ThirdParty
--
+ CONFIG += c++14
++
  CONFIG -= flat
  CONFIG += debug_and_release \
            no_include_pwd
-@@ -45,7 +43,7 @@ QT += core
+@@ -43,6 +44,8 @@ QT += core
  
  INCLUDEPATH += src
  
--include($$THIRD_PARTY_PATH/libs.pri)
 +include(libs.pri)
++
  include(src/adaptors/adaptors.pri)
  include(src/api/api.pri)
  include(src/board/board.pri)
-@@ -70,11 +68,6 @@ include(src/pdf-merger/pdfMerger.pri)
- include(plugins/plugins.pri)
- INCLUDEPATH += plugins/cffadaptor/src
+@@ -450,7 +453,6 @@ linux-g++* {
+     LIBS += -lcrypto
+     #LIBS += -lprofiler
+     LIBS += -lX11
+-    LIBS += -lquazip5
+     INCLUDEPATH += "/usr/include/quazip"
  
--#ThirdParty
--DEPENDPATH += $$THIRD_PARTY_PATH/quazip/
--INCLUDEPATH += $$THIRD_PARTY_PATH/quazip/
--include($$THIRD_PARTY_PATH/quazip/quazip.pri)
--
- FORMS += resources/forms/mainWindow.ui \
-    resources/forms/preferences.ui \
-    resources/forms/brushProperties.ui \
+     LIBS += -lpoppler
 diff --git a/libs.pri b/libs.pri
 new file mode 100644
 index 00000000..2e040664
@@ -95,5 +90,5 @@ index f8214d5d..7923c42a 100644
      src/UBCFFAdaptor.cpp
  
 -- 
-2.25.0
+2.31.0
 

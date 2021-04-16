@@ -1,20 +1,21 @@
-From 6c5bf47a61624dacd0e3aa57f51e37485cf70b70 Mon Sep 17 00:00:00 2001
+From 68ffce3f1f8576dcfea6531a80453ef0090d555d Mon Sep 17 00:00:00 2001
 From: =?UTF-8?q?Jonah=20Br=C3=BCchert?= <jbb.prv@gmx.de>
 Date: Tue, 11 Dec 2018 14:52:27 +0100
-Subject: [PATCH 04/10] podcast.pri: port to pkgconfig
+Subject: [PATCH 3/7] podcast.pri: port to pkgconfig
 
 ---
- src/podcast/podcast.pri | 16 +---------------
- 1 file changed, 1 insertion(+), 15 deletions(-)
+ src/podcast/podcast.pri | 15 +++------------
+ 1 file changed, 3 insertions(+), 12 deletions(-)
 
 diff --git a/src/podcast/podcast.pri b/src/podcast/podcast.pri
-index e96263fa..11eff38b 100644
+index 873658c9..173a90c8 100644
 --- a/src/podcast/podcast.pri
 +++ b/src/podcast/podcast.pri
-@@ -60,21 +60,7 @@ linux-g++* {
+@@ -57,22 +57,13 @@ linux-g++* {
+     SOURCES  += src/podcast/ffmpeg/UBFFmpegVideoEncoder.cpp \
                  src/podcast/ffmpeg/UBMicrophoneInput.cpp
  
- 
+-
 -    DEPENDPATH += /usr/lib/x86_64-linux-gnu
 -
 -    LIBS += -lavformat -lavcodec -lswscale -lavutil \
@@ -23,17 +24,19 @@ index e96263fa..11eff38b 100644
 -            -lxcb-shm \
 -            -lxcb-xfixes \
 -            -lxcb-render -lxcb-shape -lxcb -lX11 -lasound -lSDL -lx264 -lpthread -lvpx -lvorbisenc -lvorbis -ltheoraenc -ltheoradec -logg -lopus -lmp3lame -lfreetype -lfdk-aac -lass -llzma -lbz2 -lz -ldl -lswresample -lswscale -lavutil -lm
--
--    FFMPEG_VERSION = $$system(ffmpeg --version|& grep -oP "version.*?\K[0-9]\.[0-9]")
--    equals(FFMPEG_VERSION, 2.8) {
--        LIBS -= -lswresample
--        LIBS += -lavresample
--    }
--
 +    PKGCONFIG += libavformat libavcodec libavutil libswresample libswscale
  
+     FFMPEG_VERSION = $$system(ffmpeg --version|& grep -oP "version.*?\K[0-9]\.[0-9]")
+     equals(FFMPEG_VERSION, 2.8) {
+-        LIBS -= -lswresample
+-        LIBS += -lavresample
++        PKGCONFIG -= libswresample
++        PKGCONFIG += libavresample
+     }
+ 
+-
      QMAKE_CXXFLAGS += -std=c++11 # move this to OpenBoard.pro when we can use C++11 on all platforms
  }
 -- 
-2.25.0
+2.31.0
 
