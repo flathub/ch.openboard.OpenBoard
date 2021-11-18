@@ -1,6 +1,6 @@
 id: ch.openboard.OpenBoard
 runtime: org.kde.Platform
-runtime-version: '5.15'
+runtime-version: '5.15-21.08'
 sdk: org.kde.Sdk
 command: openboard
 finish-args:
@@ -13,7 +13,7 @@ finish-args:
   - --filesystem=home
 separate-locales: false
 base: io.qt.qtwebkit.BaseApp
-base-version: '5.15'
+base-version: '5.15-21.08'
 branch: stable
 cleanup:
   - /include
@@ -39,10 +39,11 @@ modules:
       - -DENABLE_GLIB=OFF
       - -DBUILD_GTK_TESTS=OFF
       - -DENABLE_GTK_DOC=OFF
+      - -DENABLE_BOOST=OFF
     sources:
       - type: archive
-        url: https://poppler.freedesktop.org/poppler-21.04.0.tar.xz
-        sha256: 5e2219656c6bbd36154133fef2e12b7d0938464518827098b29a10b1697ea79c
+        url: https://poppler.freedesktop.org/poppler-21.11.0.tar.xz
+        sha256: 31b76b5cac0a48612fdd154c02d9eca01fd38fb8eaa77c1196840ecdeb53a584
 
   - name: x264
     config-opts:
