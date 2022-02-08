@@ -20,13 +20,11 @@ cleanup:
   - /lib/pkgconfig
 modules:
   - name: quazip
-    buildsystem: qmake
+    buildsystem: cmake-ninja
     sources:
       - type: archive
-        url: https://github.com/stachenov/quazip/archive/v0.8.1.tar.gz
-        sha256: 4fda4d4248e08015b5090d0369ef9e68bdc4475aa12494f7c0f6d79e43270d14
-
-  - shared-modules/openjpeg/openjpeg.json
+        url: https://github.com/stachenov/quazip/archive/refs/tags/v1.2.tar.gz
+        sha256: 2dfb911d6b27545de0b98798d967c40430312377e6ade57096d6ec80c720cb61
 
   - name: poppler
     buildsystem: cmake-ninja
@@ -42,8 +40,8 @@ modules:
       - -DENABLE_BOOST=OFF
     sources:
       - type: archive
-        url: https://poppler.freedesktop.org/poppler-21.11.0.tar.xz
-        sha256: 31b76b5cac0a48612fdd154c02d9eca01fd38fb8eaa77c1196840ecdeb53a584
+        url: https://poppler.freedesktop.org/poppler-22.02.0.tar.xz
+        sha256: e390c8b806f6c9f0e35c8462033e0a738bb2460ebd660bdb8b6dca01556193e1
 
   - name: x264
     config-opts:
@@ -128,7 +126,9 @@ modules:
   - name: openboard
     buildsystem: qmake
     config-opts:
-      - INCLUDEPATH += ${FLATPAK_DEST}/include/quazip
+      - CONFIG += c++17
+      - INCLUDEPATH += ${FLATPAK_DEST}/include/QuaZip-Qt5-1.2/quazip/
+      - LIBS += -L/app/lib/ -lquazip1-qt5
       - PREFIX = ${FLATPAK_DEST}
     build-commands:
       - install -Dm644 -t ${FLATPAK_DEST}/share/appdata ${FLATPAK_ID}.appdata.xml
