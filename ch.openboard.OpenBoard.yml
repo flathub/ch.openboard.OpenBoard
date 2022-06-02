@@ -127,8 +127,6 @@ modules:
     buildsystem: qmake
     config-opts:
       - CONFIG += c++17
-      - INCLUDEPATH += ${FLATPAK_DEST}/include/QuaZip-Qt5-1.2/quazip/
-      - LIBS += -L/app/lib/ -lquazip1-qt5
       - PREFIX = ${FLATPAK_DEST}
     build-commands:
       - install -Dm644 -t ${FLATPAK_DEST}/share/appdata ${FLATPAK_ID}.appdata.xml
@@ -138,8 +136,8 @@ modules:
     sources:
       - type: git
         url: https://github.com/openboard-org/openboard
-        tag: v1.6.1
-        commit: f3f07f9930660a29eaa3cc95c86d6534109c8931
+        tag: v1.6.2
+        commit: e7907cd38fb3e42f5cb484ba9ef98d3b17ed0a3a
       - type: shell
         commands:
           - lrelease OpenBoard.pro

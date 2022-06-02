@@ -14,14 +14,6 @@ diff --git a/OpenBoard.pro b/OpenBoard.pro
 index 2de5b263..39e803f5 100644
 --- a/OpenBoard.pro
 +++ b/OpenBoard.pro
-@@ -2,6 +2,7 @@ TARGET = "OpenBoard"
- TEMPLATE = app
- 
- CONFIG += c++14
-+
- CONFIG -= flat
- CONFIG += debug_and_release \
-           no_include_pwd
 @@ -43,6 +44,8 @@ QT += core
  
  INCLUDEPATH += src
@@ -36,7 +28,7 @@ index 2de5b263..39e803f5 100644
      #LIBS += -lprofiler
      LIBS += -lX11
 -    LIBS += -lquazip5
-     INCLUDEPATH += "/usr/include/quazip"
+     INCLUDEPATH += "/usr/include/quazip5"
  
      LIBS += -lpoppler
 diff --git a/libs.pri b/libs.pri
@@ -53,8 +45,8 @@ index 00000000..2e040664
 +    PKGCONFIG += freetype2
 +
 +    # Find different versions of quazip
-+    packagesExist(quazip) {
-+        PKGCONFIG += quazip
++    packagesExist(quazip1-qt5) {
++        PKGCONFIG += quazip1-qt5
 +        message("using quazip >= 0.7.4 with pkgconfig support")
 +    } else {
 +        exists(/usr/include/quazip5/quazip.h) {
