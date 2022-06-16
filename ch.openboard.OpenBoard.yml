@@ -136,8 +136,8 @@ modules:
     sources:
       - type: git
         url: https://github.com/openboard-org/openboard
-        tag: v1.6.2
-        commit: e7907cd38fb3e42f5cb484ba9ef98d3b17ed0a3a
+        tag: v1.6.3
+        commit: d4b91d8d34744ff33ca4d16e02dd60041cd82c52
       - type: shell
         commands:
           - lrelease OpenBoard.pro

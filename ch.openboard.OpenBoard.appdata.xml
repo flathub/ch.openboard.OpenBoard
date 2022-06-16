@@ -49,6 +49,19 @@
     <value key="GnomeSoftware::popular-background">https://raw.githubusercontent.com/flathub/ch.openboard.OpenBoard/master/ch.openboard.OpenBoard-thumb.png</value>
   </metadata>
   <releases>
+    <release type="stable" date="2022-06-13" version="1.6.3">
+      <description>
+        <p>Bug fixes</p>
+        <ul>
+          <li>Fixed an issue where using the ruler would make drawing impossible, thanks to @vivianecs and @letsfindaway</li>
+        </ul>
+        <p>Known issues</p>
+        <ul>
+          <li>When Control screen is not the first screen on the left, main menu will not appear where it should. It is due to a Qt bug</li>
+          <li>With OpenBoard no longer able to be launched multiple times, double-clicking on an ubz file while OpenBoard is open won't open it.</li>
+        </ul>
+      </description>
+    </release>
     <release type="stable" date="2022-06-02" version="1.6.2">
       <description>
         <p>New Features</p>
@@ -58,14 +71,14 @@
           <li>exported PDFs are now much lighter, and text in the exported PDF is searchable again.</li>
           <li>if an error occurs during the export, previous method (flattened images of each page) is used.</li>
           <li>Added several messages to notify the users of what's happening during long operations</li>
-          <li>It is now possible to double-click on an OpenBoard document (<code>.ubz</code>)  to launch OpenBoard and open the document directly, on every officially supported platform</li>
+          <li>It is now possible to double-click on an OpenBoard document (.ubz)  to launch OpenBoard and open the document directly, on every officially supported platform</li>
           <li>Doubled the size of the arrows in Desktop Mode, making it easier to click on them with a stylus, thanks to @temaps</li>
           <li>Updated Russian translations of GraphMe, thanks to @temaps</li>
           <li>Updated Polish translations, thanks to @marcin-serwin</li>
           <li>Updated Hungarian translations, thanks to @ovari</li>
           <li>Updated Brazilian Portuguese translations, thanks to @alexrsoares</li>
           <li>Updated Traditional Chinese translations, thanks to @SiderealArt</li>
-          <li>Added the possibility to export background grid/color to PDF, using two new settings (<code>ExportBackgroundGrid</code>, <code>ExportBackgroundColor</code>), thanks to @letsfindaway</li>
+          <li>Added the possibility to export background grid/color to PDF, using two new settings (ExportBackgroundGrid, ExportBackgroundColor), thanks to @letsfindaway</li>
           <li>added a condition in packaging to enable it for Raspberry 3 and 4, thanks to @mothsART</li>
         </ul>
         <p>Bug fixes</p>
