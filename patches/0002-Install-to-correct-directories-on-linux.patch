@@ -1,21 +1,21 @@
-From 30bf5696f12497c60bef59654c0a38d93ba034bf Mon Sep 17 00:00:00 2001
+From a31dc0846840cd1c44e52e8cf32978b436b39523 Mon Sep 17 00:00:00 2001
 From: =?UTF-8?q?Jonah=20Br=C3=BCchert?= <jbb.prv@gmx.de>
 Date: Mon, 10 Dec 2018 20:41:00 +0100
-Subject: [PATCH 2/7] Install to correct directories on linux
+Subject: [PATCH 2/8] Install to correct directories on linux
 
 Installs desktop file, icon, binary and library
 ---
- OpenBoard.pro                                 |  35 ++++++++++++------
+ OpenBoard.pro                                 |  40 ++++++++++++------
  resources/OpenBoard.qrc                       |   2 +-
  resources/ch.openboard.OpenBoard.desktop      |  12 ++++++
  ...enBoard.png => ch.openboard.OpenBoard.png} | Bin
  src/core/UBApplication.cpp                    |   2 +-
- 5 files changed, 37 insertions(+), 14 deletions(-)
+ 5 files changed, 42 insertions(+), 14 deletions(-)
  create mode 100644 resources/ch.openboard.OpenBoard.desktop
  rename resources/images/{OpenBoard.png => ch.openboard.OpenBoard.png} (100%)
 
 diff --git a/OpenBoard.pro b/OpenBoard.pro
-index 39e803f5..f1c4333a 100644
+index 9b466092..dc8d29a7 100644
 --- a/OpenBoard.pro
 +++ b/OpenBoard.pro
 @@ -1,4 +1,4 @@
@@ -23,8 +23,8 @@ index 39e803f5..f1c4333a 100644
 +TARGET = "openboard"
  TEMPLATE = app
  
- CONFIG += c++14
-@@ -80,11 +80,14 @@ FORMS += resources/forms/mainWindow.ui \
+ CONFIG += c++17
+@@ -83,11 +83,15 @@ FORMS += resources/forms/mainWindow.ui \
     resources/forms/capturePublishing.ui \
     resources/forms/intranetPodcastPublishingDialog.ui
  
@@ -34,12 +34,13 @@ index 39e803f5..f1c4333a 100644
  UB_LIBRARY.files = resources/library
  UB_FONTS.files = resources/fonts
  UB_THIRDPARTY_INTERACTIVE.files = thirdparty/interactive
++UB_CUSTOM_FONTS.files = resources/customizations/fonts
 +UB_DESKTOP.files = resources/ch.openboard.OpenBoard.desktop
 +UB_ICON.files = resources/images/ch.openboard.OpenBoard.png
  
  DEFINES += NO_THIRD_PARTY_WARNINGS
  DEFINES += UBVERSION=\"\\\"$${LONG_VERSION}\"\\\" \
-@@ -103,7 +106,6 @@ CONFIG(release, debug|release) {
+@@ -106,7 +110,6 @@ CONFIG(release, debug|release) {
     CONFIG += warn_off
  }
  
@@ -47,7 +48,7 @@ index 39e803f5..f1c4333a 100644
  OBJECTS_DIR = $$BUILD_DIR/objects
  MOC_DIR = $$BUILD_DIR/moc
  RCC_DIR = $$BUILD_DIR/rcc
-@@ -214,14 +216,15 @@ macx {
+@@ -216,14 +219,15 @@ macx {
     QMAKE_CXXFLAGS_RELEASE += -gdwarf-2 \
         -mdynamic-no-pic
  
@@ -66,7 +67,7 @@ index 39e803f5..f1c4333a 100644
     UB_ETC.files = "resources/etc"
     UB_ETC.path = "$$RESOURCES_DIR"
     UB_LIBRARY.files = "resources/library"
-@@ -449,6 +452,10 @@ macx {
+@@ -451,6 +455,10 @@ macx {
  }
  
  linux-g++* {
@@ -77,7 +78,7 @@ index 39e803f5..f1c4333a 100644
      CONFIG += link_prl
      LIBS += -lcrypto
      #LIBS += -lprofiler
-@@ -461,10 +468,12 @@ linux-g++* {
+@@ -464,10 +472,14 @@ linux-g++* {
      QMAKE_CFLAGS += -fopenmp
      QMAKE_CXXFLAGS += -fopenmp
      QMAKE_LFLAGS += -fopenmp
@@ -89,18 +90,22 @@ index 39e803f5..f1c4333a 100644
 +    UB_LIBRARY.path = $$INSTALL_ROOT/$$PREFIX/share/OpenBoard/
 +    UB_I18N.path = $$INSTALL_ROOT/$$PREFIX/share/OpenBoard/i18n/
 +    UB_ETC.path = $$INSTALL_ROOT/$$PREFIX/share/OpenBoard/
++    UB_FONTS.path = $$INSTALL_ROOT/$$PREFIX/share/OpenBoard
++    UB_CUSTOM_FONTS.path = $$INSTALL_ROOT/$$PREFIX/share/OpenBoard/customizations
 +    UB_DESKTOP.path = $$INSTALL_ROOT/$$PREFIX/share/applications/
 +    UB_ICON.path = $$INSTALL_ROOT/$$PREFIX/share/icons/hicolor/64x64/apps/
      system(mkdir -p $$BUILD_DIR)
      system(echo "$$VERSION" > $$BUILD_DIR/version)
      system(echo "$$LONG_VERSION" > $$BUILD_DIR/longversion)
-@@ -507,12 +516,14 @@ TRANSLATIONS = resources/i18n/OpenBoard_en.ts \
+@@ -510,12 +522,16 @@ TRANSLATIONS = resources/i18n/OpenBoard_en.ts \
     resources/i18n/OpenBoard_hu.ts \
     resources/i18n/OpenBoard_mg.ts
  
 -INSTALLS = UB_ETC \
 +INSTALLS = UB_BINARY \
 +   UB_ETC \
++   UB_FONTS \
++   UB_CUSTOM_FONTS \
     UB_I18N \
     UB_LIBRARY \
 -   UB_THIRDPARTY_INTERACTIVE
@@ -113,7 +118,7 @@ index 39e803f5..f1c4333a 100644
      resources/images/moveDownDisabled.svg
 -
 diff --git a/resources/OpenBoard.qrc b/resources/OpenBoard.qrc
-index 480269c1..07c27288 100644
+index 01f2ac6d..2d97df7b 100644
 --- a/resources/OpenBoard.qrc
 +++ b/resources/OpenBoard.qrc
 @@ -1,6 +1,6 @@
@@ -147,10 +152,10 @@ similarity index 100%
 rename from resources/images/OpenBoard.png
 rename to resources/images/ch.openboard.OpenBoard.png
 diff --git a/src/core/UBApplication.cpp b/src/core/UBApplication.cpp
-index b189c3b8..a7f6172d 100644
+index e466ce51..f1dcfa2b 100644
 --- a/src/core/UBApplication.cpp
 +++ b/src/core/UBApplication.cpp
-@@ -130,7 +130,7 @@ UBApplication::UBApplication(const QString &id, int &argc, char **argv) : QtSing
+@@ -133,7 +133,7 @@ UBApplication::UBApplication(const QString &id, int &argc, char **argv) : Single
      updateProtoActionsState();
  
  #ifndef Q_OS_OSX
@@ -160,5 +165,5 @@ index b189c3b8..a7f6172d 100644
  
      setStyle("fusion");
 -- 
-2.31.0
+2.35.1
 
