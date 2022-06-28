@@ -25,6 +25,11 @@ modules:
       - type: archive
         url: https://github.com/stachenov/quazip/archive/refs/tags/v1.2.tar.gz
         sha256: 2dfb911d6b27545de0b98798d967c40430312377e6ade57096d6ec80c720cb61
+        x-checker-data:
+          type: anitya
+          project-id: 4141
+          stable-only: true
+          url-template: https://github.com/stachenov/quazip/archive/refs/tags/v$version.tar.gz
 
   - name: poppler
     buildsystem: cmake-ninja
@@ -42,19 +47,29 @@ modules:
       - type: archive
         url: https://poppler.freedesktop.org/poppler-22.02.0.tar.xz
         sha256: e390c8b806f6c9f0e35c8462033e0a738bb2460ebd660bdb8b6dca01556193e1
+        x-checker-data:
+          type: anitya
+          project-id: 3686
+          stable-only: true
+          url-template: https://poppler.freedesktop.org/poppler-$version.tar.xz
 
   - name: x264
     config-opts:
-    - "--prefix=/app/"
-    - "--enable-shared"
-    - "--disable-cli"
+      - "--prefix=/app/"
+      - "--enable-shared"
+      - "--disable-cli"
     sources:
-    - type: archive
-      url: http://ftp.videolan.org/pub/x264/snapshots/x264-snapshot-20191217-2245-stable.tar.bz2
-      sha256: b2495c8f2930167d470994b1ce02b0f4bfb24b3317ba36ba7f112e9809264160
+      - type: archive
+        url: http://ftp.videolan.org/pub/x264/snapshots/x264-snapshot-20191217-2245-stable.tar.bz2
+        sha256: b2495c8f2930167d470994b1ce02b0f4bfb24b3317ba36ba7f112e9809264160
+        x-checker-data:
+          type: anitya
+          project-id: 15280
+          stable-only: true
+          url-template: http://ftp.videolan.org/pub/x264/snapshots/x264-snapshot-$version-stable.tar.bz2
     cleanup:
-    - "/app/include"
-    - "/app/pkgconfig"
+      - "/app/include"
+      - "/app/pkgconfig"
 
   - name: ffmpeg
     build-options:
@@ -115,13 +130,13 @@ modules:
     - "--enable-decoder=pcm_s16le"
     - "--enable-decoder=theora"
     sources:
-    - type: archive
-      url: https://www.ffmpeg.org/releases/ffmpeg-4.4.tar.xz
-      sha256: 06b10a183ce5371f915c6bb15b7b1fffbe046e8275099c96affc29e17645d909
+      - type: archive
+        url: https://www.ffmpeg.org/releases/ffmpeg-4.4.tar.xz
+        sha256: 06b10a183ce5371f915c6bb15b7b1fffbe046e8275099c96affc29e17645d909
     cleanup:
-    - "/app/include"
-    - "/app/lib/pkgconfig"
-    - "/app/share"
+      - "/app/include"
+      - "/app/lib/pkgconfig"
+      - "/app/share"
 
   - name: openboard
     buildsystem: qmake
@@ -138,6 +153,9 @@ modules:
         url: https://github.com/openboard-org/openboard
         tag: v1.6.3
         commit: d4b91d8d34744ff33ca4d16e02dd60041cd82c52
+        x-chacker-data:
+          type: git
+          tag-pattern: "^v([\\d.]+)$"
       - type: shell
         commands:
           - lrelease OpenBoard.pro
@@ -163,5 +181,6 @@ modules:
     sources:
       - type: git
         url: https://github.com/OpenBoard-Org/OpenBoard-Importer
+        commit: 47927bda021b4f7f1540b794825fb0d601875e79
     build-commands:
       - install -Dm755 -t ${FLATPAK_DEST}/bin/ OpenBoardImporter
