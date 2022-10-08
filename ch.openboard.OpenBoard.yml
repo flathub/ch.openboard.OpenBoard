@@ -151,8 +151,8 @@ modules:
     sources:
       - type: git
         url: https://github.com/openboard-org/openboard
-        tag: v1.6.3
-        commit: d4b91d8d34744ff33ca4d16e02dd60041cd82c52
+        tag: v1.6.4
+        commit: b474fa37027ba910bf236e49b7316d525c6d0821
         x-chacker-data:
           type: git
           tag-pattern: ^v([\d.]+)$
