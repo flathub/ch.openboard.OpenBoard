@@ -49,6 +49,27 @@
     <value key="GnomeSoftware::popular-background">https://raw.githubusercontent.com/flathub/ch.openboard.OpenBoard/master/ch.openboard.OpenBoard-thumb.png</value>
   </metadata>
   <releases>
+    <release type="stable" date="2022-06-13" version="1.6.4">
+      <description>
+        <p>New features</p>
+        <ul>
+          <li>Added the possibility to zoom using ctrl/cmd + mouse wheel, scroll up/down with mouse wheel, and scroll left/right with alt + mouse wheel, thanks to @letsfindaway</li>
+          <li>Updated Simplified Chinese translation, thanks to @wcxu21</li>
+          <li>Updated basque translations, thanks to @alexgabi</li>
+        </ul>
+        <p>Bug fixes</p>
+        <ul>
+          <li>Fixed an issue where a PDF imported in OpenBoard, then exported as PDF, could have the original PDF inside not correctly scaled, with the help of @letsfindaway</li>
+          <li>Improved performance of building font model, thanks to @letsfindaway</li>
+        </ul>
+        <p>Known issues</p>
+        <ul>
+          <li>When Control screen is not the first screen on the left, main menu will not appear where it should. It is due to a Qt bug</li>
+          <li>With OpenBoard no longer able to be launched multiple times, double-clicking on an ubz file while OpenBoard is open won't open it.</li>
+          <li>In Desktop Mode, Gnome Dock should be set to bottom position to workaround the issue with the Openboard left palette not beeing usable from above it.</li>
+        </ul>
+      </description>
+    </release>
     <release type="stable" date="2022-06-13" version="1.6.3">
       <description>
         <p>Bug fixes</p>
