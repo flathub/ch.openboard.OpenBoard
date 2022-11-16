@@ -168,6 +168,8 @@ modules:
         path: patches/0006-pro-Remove-UB_THIRDPARTY_INTERACTIVE.patch
       - type: patch
         path: patches/0007-Linux-Only-use-onboard-by-default-if-it-s-installed.patch
+      - type: patch
+        path: patches/0009-Disable-update-check.patch
       - type: file
         path: ch.openboard.OpenBoard.appdata.xml
 
