@@ -144,13 +144,15 @@ modules:
       env:
         QMAKEPATH: /app/lib
     sources:
-      - type: git
-        url: https://github.com/openboard-org/openboard
-        tag: v1.6.4
-        commit: b474fa37027ba910bf236e49b7316d525c6d0821
-        x-chacker-data:
-          type: git
-          tag-pattern: ^v([\d.]+)$
+      - type: archive
+        url: https://github.com/OpenBoard-org/OpenBoard/archive/refs/tags/v1.6.4.tar.gz
+        sha256: a64a575cbc8dd9265f542e361ab77cf7fa612dc9ca34cbcdd6129606403ac8af
+        x-checker-data:
+          type: anitya
+          project-id: 65331
+          stable-only: true
+          url-template: https://github.com/OpenBoard-org/OpenBoard/archive/refs/tags/v$version.tar.gz
+
       - type: shell
         commands:
           - lrelease OpenBoard.pro
