@@ -61,8 +61,16 @@ modules:
       - --disable-cli
     sources:
       - type: archive
-        url: http://ftp.videolan.org/pub/x264/snapshots/x264-snapshot-20191217-2245-stable.tar.bz2
-        sha256: b2495c8f2930167d470994b1ce02b0f4bfb24b3317ba36ba7f112e9809264160
+        url: https://deb.debian.org/debian/pool/main/x/x264/x264_0.164.3095+gitbaee400.orig.tar.gz
+        sha256: 8b237e94b08c196a1da22f2f25875f10be4cff3648df4eeff21e00da8f683fc2
+        # x264 doesn't have releases, so just track whatever debian is shipping
+        x-checker-data:
+          type: debian-repo
+          package-name: x264
+          root: https://deb.debian.org/debian
+          dist: unstable
+          component: main
+          source: true
     cleanup:
       - /app/include
       - /app/pkgconfig
