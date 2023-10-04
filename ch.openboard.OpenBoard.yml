@@ -127,8 +127,13 @@ modules:
       - --enable-decoder=theora
     sources:
       - type: archive
-        url: https://www.ffmpeg.org/releases/ffmpeg-4.4.tar.xz
-        sha256: 06b10a183ce5371f915c6bb15b7b1fffbe046e8275099c96affc29e17645d909
+        url: https://www.ffmpeg.org/releases/ffmpeg-6.0.tar.xz
+        sha256: 57be87c22d9b49c112b6d24bc67d42508660e6b718b3db89c44e47e289137082
+        x-checker-data:
+          type: anitya
+          project-id: 5405
+          stable-only: true
+          url-template: https://www.ffmpeg.org/releases/ffmpeg-$version.tar.xz
     cleanup:
       - /app/include
       - /app/lib/pkgconfig
@@ -173,6 +178,8 @@ modules:
         path: patches/0007-Linux-Only-use-onboard-by-default-if-it-s-installed.patch
       - type: patch
         path: patches/0009-Disable-update-check.patch
+      - type: patch
+        path: patches/0010-ffmpeg5.patch
       - type: file
         path: ch.openboard.OpenBoard.appdata.xml
 
