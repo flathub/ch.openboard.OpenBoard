@@ -1,7 +1,7 @@
-From c5f8d4b5b7d43c99ddcd2b9bcbe4ec4b7beddad9 Mon Sep 17 00:00:00 2001
+From 5f9ec59b2c478754d739d265d6b67eeb44cc8261 Mon Sep 17 00:00:00 2001
 From: letsfindaway <me@letsfindaway.de>
 Date: Wed, 18 May 2022 12:13:46 +0200
-Subject: [PATCH 1/2] fix: make UBFFmpegVideoEncoder compatible with ffmpeg-5
+Subject: [PATCH 09/10] fix: make UBFFmpegVideoEncoder compatible with ffmpeg-5
 
 - keep separate reference to AVCodecContext
 - copy parameters to AVCodecParameters
@@ -13,7 +13,7 @@ Subject: [PATCH 1/2] fix: make UBFFmpegVideoEncoder compatible with ffmpeg-5
  2 files changed, 134 insertions(+), 50 deletions(-)
 
 diff --git a/src/podcast/ffmpeg/UBFFmpegVideoEncoder.cpp b/src/podcast/ffmpeg/UBFFmpegVideoEncoder.cpp
-index 0e4829c49..4fd84d740 100644
+index 0e4829c4..4fd84d74 100644
 --- a/src/podcast/ffmpeg/UBFFmpegVideoEncoder.cpp
 +++ b/src/podcast/ffmpeg/UBFFmpegVideoEncoder.cpp
 @@ -45,20 +45,20 @@
@@ -456,10 +456,10 @@ index 0e4829c49..4fd84d740 100644
  #endif
  }
 diff --git a/src/podcast/ffmpeg/UBFFmpegVideoEncoder.h b/src/podcast/ffmpeg/UBFFmpegVideoEncoder.h
-index 1e8a12cfa..14b735064 100644
+index 1e8a12cf..14b73506 100644
 --- a/src/podcast/ffmpeg/UBFFmpegVideoEncoder.h
 +++ b/src/podcast/ffmpeg/UBFFmpegVideoEncoder.h
-@@ -123,6 +123,7 @@ private slots:
+@@ -123,6 +123,7 @@ private:
  
      // Video
      // ------------------------------------------
@@ -467,7 +467,7 @@ index 1e8a12cfa..14b735064 100644
      QQueue<ImageFrame> mPendingFrames;
      struct SwsContext * mSwsContext;
  
-@@ -133,6 +134,7 @@ private slots:
+@@ -133,6 +134,7 @@ private:
      bool mShouldRecordAudio;
  
      UBMicrophoneInput * mAudioInput;
@@ -475,31 +475,6 @@ index 1e8a12cfa..14b735064 100644
      struct SwrContext * mSwrContext;
      /// Queue for audio that has been rescaled/converted but not encoded yet
      AVAudioFifo *mAudioOutBuffer;
+-- 
+2.40.1
 
-From 347af2a56804100c589766ff20768914d8a04903 Mon Sep 17 00:00:00 2001
-From: letsfindaway <me@letsfindaway.de>
-Date: Thu, 15 Sep 2022 11:55:17 +0200
-Subject: [PATCH 2/2] fix: avoid taking address of initializer list
-
-- FFmpeg example code was used for UBFFmpegVideoEncoder.cpp
-- channel layout was initialized by taking address of an initializer
-- at least for some compilers this fails, as it is an rvalue
-- using an explicit variable avoids this
----
- src/podcast/ffmpeg/UBFFmpegVideoEncoder.cpp | 3 ++-
- 1 file changed, 2 insertions(+), 1 deletion(-)
-
-diff --git a/src/podcast/ffmpeg/UBFFmpegVideoEncoder.cpp b/src/podcast/ffmpeg/UBFFmpegVideoEncoder.cpp
-index 4fd84d740..805ff77e1 100644
---- a/src/podcast/ffmpeg/UBFFmpegVideoEncoder.cpp
-+++ b/src/podcast/ffmpeg/UBFFmpegVideoEncoder.cpp
-@@ -455,7 +455,8 @@ bool UBFFmpegVideoEncoder::init()
-         c->channel_layout = AV_CH_LAYOUT_STEREO;
-         c->channels  = av_get_channel_layout_nb_channels(c->channel_layout);
- #else
--        av_channel_layout_copy(&c->ch_layout, &(AVChannelLayout)AV_CHANNEL_LAYOUT_STEREO);
-+        AVChannelLayout layout = AV_CHANNEL_LAYOUT_STEREO;
-+        av_channel_layout_copy(&c->ch_layout, &layout);
- #endif
- 
-         //deprecated on ffmpeg 4
