@@ -1,14 +1,14 @@
-From e226baba6a6e19926936cf2b8de23fa2bc235c56 Mon Sep 17 00:00:00 2001
+From 73d7786ecc63bbf7d90fe3fc545cf06e12ee7dfd Mon Sep 17 00:00:00 2001
 From: =?UTF-8?q?Jonah=20Br=C3=BCchert?= <jbb.prv@gmx.de>
 Date: Tue, 11 Dec 2018 18:45:20 +0100
-Subject: [PATCH 4/7] Use QStandardPaths to locate resources
+Subject: [PATCH 04/10] Use QStandardPaths to locate resources
 
 ---
  src/frameworks/UBPlatformUtils_linux.cpp | 9 ++++++++-
  1 file changed, 8 insertions(+), 1 deletion(-)
 
 diff --git a/src/frameworks/UBPlatformUtils_linux.cpp b/src/frameworks/UBPlatformUtils_linux.cpp
-index de5bdb9f..52c6e30c 100644
+index 641cda9e..2546cb8e 100644
 --- a/src/frameworks/UBPlatformUtils_linux.cpp
 +++ b/src/frameworks/UBPlatformUtils_linux.cpp
 @@ -31,6 +31,7 @@
@@ -35,5 +35,5 @@ index de5bdb9f..52c6e30c 100644
  
  void UBPlatformUtils::hideFile(const QString &filePath)
 -- 
-2.31.0
+2.40.1
 

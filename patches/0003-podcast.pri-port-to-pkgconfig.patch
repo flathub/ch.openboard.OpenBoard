@@ -1,7 +1,7 @@
-From 68ffce3f1f8576dcfea6531a80453ef0090d555d Mon Sep 17 00:00:00 2001
+From db2c427dc3ebb2f726e78d28fa7c7250582ce1aa Mon Sep 17 00:00:00 2001
 From: =?UTF-8?q?Jonah=20Br=C3=BCchert?= <jbb.prv@gmx.de>
 Date: Tue, 11 Dec 2018 14:52:27 +0100
-Subject: [PATCH 3/7] podcast.pri: port to pkgconfig
+Subject: [PATCH 03/10] podcast.pri: port to pkgconfig
 
 ---
  src/podcast/podcast.pri | 15 +++------------
@@ -38,5 +38,5 @@ index 873658c9..173a90c8 100644
      QMAKE_CXXFLAGS += -std=c++11 # move this to OpenBoard.pro when we can use C++11 on all platforms
  }
 -- 
-2.31.0
+2.40.1
 

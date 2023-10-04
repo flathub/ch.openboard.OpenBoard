@@ -1,7 +1,7 @@
-From be75aac451bf6a343f88a58161d375c50cc4ccdd Mon Sep 17 00:00:00 2001
+From 5018f81c4733c3fd638cfa3aff5f1f8e5ab82cdf Mon Sep 17 00:00:00 2001
 From: letsfindaway <me@letsfindaway.de>
 Date: Wed, 16 Nov 2022 08:31:29 +0100
-Subject: [PATCH] feat: disable software update check
+Subject: [PATCH 08/10] feat: disable software update check
 
 - for packages maintained by a Linux distribution,
   a software update check is not relevant
@@ -13,7 +13,7 @@ Subject: [PATCH] feat: disable software update check
  2 files changed, 3 insertions(+), 3 deletions(-)
 
 diff --git a/resources/etc/OpenBoard.config b/resources/etc/OpenBoard.config
-index 0120f922d..9801e6489 100644
+index 89f3a72e..3ecf4e98 100644
 --- a/resources/etc/OpenBoard.config
 +++ b/resources/etc/OpenBoard.config
 @@ -1,9 +1,8 @@
@@ -29,14 +29,17 @@ index 0120f922d..9801e6489 100644
  FavoriteToolURIs=openboardtool://openboard/mask, openboardtool://ruler, openboardtool://compass, openboardtool://protractor, openboardtool://triangle, openboardtool://magnifier, openboardtool://cache
  IsInSoftwareUpdateProcess=false
 diff --git a/src/core/UBPreferencesController.cpp b/src/core/UBPreferencesController.cpp
-index 4e7c5612a..b18635064 100644
+index c1ee6614..a60d10c2 100644
 --- a/src/core/UBPreferencesController.cpp
 +++ b/src/core/UBPreferencesController.cpp
-@@ -90,6 +90,7 @@ UBPreferencesController::UBPreferencesController(QWidget *parent)
+@@ -85,6 +85,7 @@ UBPreferencesController::UBPreferencesController(QWidget *parent)
      mPreferencesWindow = new UBPreferencesDialog(this,parent, Qt::Dialog);
-     mPreferencesUI = new Ui::preferencesDialog();  // deleted in destructor
+     mPreferencesUI = new Ui::preferencesDialog();  // deleted in
      mPreferencesUI->setupUi(mPreferencesWindow);
 +    mPreferencesUI->softwareUpdateGroupBox->hide();     // disable check for software update
      adjustScreens(1);
      connect(mDesktop, &QDesktopWidget::screenCountChanged, this, &UBPreferencesController::adjustScreens);
  
+-- 
+2.40.1
+

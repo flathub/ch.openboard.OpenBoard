@@ -185,9 +185,11 @@ modules:
       - type: patch
         path: patches/0007-Linux-Only-use-onboard-by-default-if-it-s-installed.patch
       - type: patch
-        path: patches/0009-Disable-update-check.patch
+        path: patches/0008-feat-disable-software-update-check.patch
       - type: patch
-        path: patches/0010-ffmpeg5.patch
+        path: patches/0009-fix-make-UBFFmpegVideoEncoder-compatible-with-ffmpeg.patch
+      - type: patch
+        path: patches/0010-fix-avoid-taking-address-of-initializer-list.patch
       - type: file
         path: ch.openboard.OpenBoard.appdata.xml
 

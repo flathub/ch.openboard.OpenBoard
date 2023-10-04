@@ -1,7 +1,7 @@
-From 7dc87874b8fa708fdab50ca8738e2ee3b81a1ef7 Mon Sep 17 00:00:00 2001
+From 09eca0da3df79a0c62f166a8d192dbf08c5c596e Mon Sep 17 00:00:00 2001
 From: =?UTF-8?q?Jonah=20Br=C3=BCchert?= <jbb.prv@gmx.de>
 Date: Wed, 10 Apr 2019 21:47:07 +0200
-Subject: [PATCH 7/7] Linux: Only use onboard by default if it's installed
+Subject: [PATCH 07/10] Linux: Only use onboard by default if it's installed
 
 ---
  resources/etc/OpenBoard.config |  1 -
@@ -10,7 +10,7 @@ Subject: [PATCH 7/7] Linux: Only use onboard by default if it's installed
  3 files changed, 16 insertions(+), 2 deletions(-)
 
 diff --git a/resources/etc/OpenBoard.config b/resources/etc/OpenBoard.config
-index 5d29fb4b..a4130d09 100644
+index edf8a856..89f3a72e 100644
 --- a/resources/etc/OpenBoard.config
 +++ b/resources/etc/OpenBoard.config
 @@ -22,7 +22,6 @@ ToolBarOrientationVertical=false
@@ -22,7 +22,7 @@ index 5d29fb4b..a4130d09 100644
  [Board]
  AutoSaveIntervalInMinutes=3
 diff --git a/src/core/UBSettings.cpp b/src/core/UBSettings.cpp
-index 23bbb069..1dc27703 100644
+index b51d47c0..1900de50 100644
 --- a/src/core/UBSettings.cpp
 +++ b/src/core/UBSettings.cpp
 @@ -227,6 +227,20 @@ void UBSettings::ValidateKeyboardPaletteKeyBtnSize()
@@ -46,7 +46,7 @@ index 23bbb069..1dc27703 100644
  void UBSettings::init()
  {
      productWebUrl =  new UBSetting(this, "App", "ProductWebAddress", "http://www.openboard.ch");
-@@ -470,7 +484,7 @@ void UBSettings::init()
+@@ -475,7 +489,7 @@ void UBSettings::init()
  
      libIconSize = new UBSetting(this, "Library", "LibIconSize", defaultLibraryIconSize);
  
@@ -56,7 +56,7 @@ index 23bbb069..1dc27703 100644
      showDateColumnOnAlphabeticalSort = new UBSetting(this, "Document", "ShowDateColumnOnAlphabeticalSort", false);
      emptyTrashForOlderDocuments = new UBSetting(this, "Document", "emptyTrashForOlderDocuments", false);
 diff --git a/src/core/UBSettings.h b/src/core/UBSettings.h
-index 653eb6dc..9408b5b6 100644
+index c6e0f229..0314f7ff 100644
 --- a/src/core/UBSettings.h
 +++ b/src/core/UBSettings.h
 @@ -52,6 +52,7 @@ class UBSettings : public QObject
@@ -68,5 +68,5 @@ index 653eb6dc..9408b5b6 100644
      public:
  
 -- 
-2.31.0
+2.40.1
 

@@ -1,20 +1,20 @@
-From 56417e0a4b0063b3ec83d1f31ab6b3080875cdcc Mon Sep 17 00:00:00 2001
+From 7d4438310f655b60c070ae58df1e92260bb1c055 Mon Sep 17 00:00:00 2001
 From: =?UTF-8?q?Jonah=20Br=C3=BCchert?= <jbb.prv@gmx.de>
 Date: Mon, 10 Dec 2018 20:37:51 +0100
-Subject: [PATCH 1/7] Rewrite libs.pri
+Subject: [PATCH 01/10] Rewrite libs.pri
 
 ---
- OpenBoard.pro                       |  4 +++-
+ OpenBoard.pro                       |  3 ++-
  libs.pri                            | 28 ++++++++++++++++++++++++++++
  plugins/cffadaptor/UBCFFAdaptor.pro |  5 -----
- 3 files changed, 31 insertions(+), 6 deletions(-)
+ 3 files changed, 30 insertions(+), 6 deletions(-)
  create mode 100644 libs.pri
 
 diff --git a/OpenBoard.pro b/OpenBoard.pro
-index 2de5b263..39e803f5 100644
+index 243169db..2bafd7f1 100644
 --- a/OpenBoard.pro
 +++ b/OpenBoard.pro
-@@ -43,6 +44,8 @@ QT += core
+@@ -44,6 +44,8 @@ QT += concurrent
  
  INCLUDEPATH += src
  
@@ -23,7 +23,7 @@ index 2de5b263..39e803f5 100644
  include(src/adaptors/adaptors.pri)
  include(src/api/api.pri)
  include(src/board/board.pri)
-@@ -450,7 +453,6 @@ linux-g++* {
+@@ -451,7 +453,6 @@ linux-g++* {
      LIBS += -lcrypto
      #LIBS += -lprofiler
      LIBS += -lX11
@@ -33,7 +33,7 @@ index 2de5b263..39e803f5 100644
      LIBS += -lpoppler
 diff --git a/libs.pri b/libs.pri
 new file mode 100644
-index 00000000..2e040664
+index 00000000..9524b593
 --- /dev/null
 +++ b/libs.pri
 @@ -0,0 +1,28 @@
@@ -82,5 +82,5 @@ index f8214d5d..7923c42a 100644
      src/UBCFFAdaptor.cpp
  
 -- 
-2.31.0
+2.40.1
 
