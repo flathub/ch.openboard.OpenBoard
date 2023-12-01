@@ -14,7 +14,6 @@ finish-args:
 separate-locales: false
 base: io.qt.qtwebkit.BaseApp
 base-version: 5.15-22.08
-branch: stable
 cleanup:
   - /include
   - /lib/pkgconfig
