@@ -1,7 +1,7 @@
-From 5018f81c4733c3fd638cfa3aff5f1f8e5ab82cdf Mon Sep 17 00:00:00 2001
+From a0230b08fbd57862ae2c1eeef5a496edc65703ff Mon Sep 17 00:00:00 2001
 From: letsfindaway <me@letsfindaway.de>
 Date: Wed, 16 Nov 2022 08:31:29 +0100
-Subject: [PATCH 08/10] feat: disable software update check
+Subject: [PATCH 8/9] feat: disable software update check
 
 - for packages maintained by a Linux distribution,
   a software update check is not relevant
@@ -13,7 +13,7 @@ Subject: [PATCH 08/10] feat: disable software update check
  2 files changed, 3 insertions(+), 3 deletions(-)
 
 diff --git a/resources/etc/OpenBoard.config b/resources/etc/OpenBoard.config
-index 89f3a72e..3ecf4e98 100644
+index e6f437bf..2c7c9a22 100644
 --- a/resources/etc/OpenBoard.config
 +++ b/resources/etc/OpenBoard.config
 @@ -1,9 +1,8 @@
@@ -29,17 +29,17 @@ index 89f3a72e..3ecf4e98 100644
  FavoriteToolURIs=openboardtool://openboard/mask, openboardtool://ruler, openboardtool://compass, openboardtool://protractor, openboardtool://triangle, openboardtool://magnifier, openboardtool://cache
  IsInSoftwareUpdateProcess=false
 diff --git a/src/core/UBPreferencesController.cpp b/src/core/UBPreferencesController.cpp
-index c1ee6614..a60d10c2 100644
+index 79888988..d2693514 100644
 --- a/src/core/UBPreferencesController.cpp
 +++ b/src/core/UBPreferencesController.cpp
 @@ -85,6 +85,7 @@ UBPreferencesController::UBPreferencesController(QWidget *parent)
      mPreferencesWindow = new UBPreferencesDialog(this,parent, Qt::Dialog);
-     mPreferencesUI = new Ui::preferencesDialog();  // deleted in
+     mPreferencesUI = new Ui::preferencesDialog();  // deleted in destructor
      mPreferencesUI->setupUi(mPreferencesWindow);
 +    mPreferencesUI->softwareUpdateGroupBox->hide();     // disable check for software update
-     adjustScreens(1);
-     connect(mDesktop, &QDesktopWidget::screenCountChanged, this, &UBPreferencesController::adjustScreens);
+     adjustScreensPreferences();
  
+     connect(UBApplication::displayManager, &UBDisplayManager::availableScreenCountChanged, this, &UBPreferencesController::adjustScreensPreferences);
 -- 
-2.40.1
+2.42.0
 

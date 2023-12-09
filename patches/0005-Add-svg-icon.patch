@@ -1,7 +1,7 @@
-From 6b895bfaeb030a0cc761ac86355522534f7cf27e Mon Sep 17 00:00:00 2001
+From 2d26bfc86f6d89f32859d0470483652831a84b95 Mon Sep 17 00:00:00 2001
 From: =?UTF-8?q?Jonah=20Br=C3=BCchert?= <jbb.prv@gmx.de>
 Date: Thu, 13 Dec 2018 21:55:00 +0100
-Subject: [PATCH 05/10] Add svg icon
+Subject: [PATCH 5/9] Add svg icon
 
 ---
  OpenBoard.pro                               | 4 ++--
@@ -10,10 +10,10 @@ Subject: [PATCH 05/10] Add svg icon
  create mode 100644 resources/images/ch.openboard.OpenBoard.svg
 
 diff --git a/OpenBoard.pro b/OpenBoard.pro
-index 39e6b69e..6a601dfb 100644
+index 0fccda13..3176e37a 100644
 --- a/OpenBoard.pro
 +++ b/OpenBoard.pro
-@@ -89,7 +89,7 @@ UB_FONTS.files = resources/fonts
+@@ -94,7 +94,7 @@ UB_FONTS.files = resources/fonts
  UB_THIRDPARTY_INTERACTIVE.files = thirdparty/interactive
  UB_CUSTOM_FONTS.files = resources/customizations/fonts
  UB_DESKTOP.files = resources/ch.openboard.OpenBoard.desktop
@@ -22,7 +22,7 @@ index 39e6b69e..6a601dfb 100644
  
  DEFINES += NO_THIRD_PARTY_WARNINGS
  DEFINES += UBVERSION=\"\\\"$${LONG_VERSION}\"\\\" \
-@@ -476,7 +476,7 @@ linux-g++* {
+@@ -488,7 +488,7 @@ linux-g++* {
      UB_FONTS.path = $$INSTALL_ROOT/$$PREFIX/share/OpenBoard
      UB_CUSTOM_FONTS.path = $$INSTALL_ROOT/$$PREFIX/share/OpenBoard/customizations
      UB_DESKTOP.path = $$INSTALL_ROOT/$$PREFIX/share/applications/
@@ -42,5 +42,5 @@ index 00000000..4eecaaa2
 +  <path fill="#f48c4f" d="M433 116l-20 35-27 45c-15 23-56 75-65 84-4 5-11 7-15 6-7-1-11-10-8-17a570 570 0 0 1 65-128l62-92c27-40 27-40 38-40 5 0 7 0 11 3s8 9 8 14-2 9-17 35l-14 26"/>
 +</svg>
 -- 
-2.40.1
+2.42.0
 
