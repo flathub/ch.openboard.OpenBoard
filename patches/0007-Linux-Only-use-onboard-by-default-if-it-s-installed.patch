@@ -1,7 +1,7 @@
-From 09eca0da3df79a0c62f166a8d192dbf08c5c596e Mon Sep 17 00:00:00 2001
+From 20bee2f17765dde877f3243b1723e76cc3a4a3cb Mon Sep 17 00:00:00 2001
 From: =?UTF-8?q?Jonah=20Br=C3=BCchert?= <jbb.prv@gmx.de>
 Date: Wed, 10 Apr 2019 21:47:07 +0200
-Subject: [PATCH 07/10] Linux: Only use onboard by default if it's installed
+Subject: [PATCH 7/9] Linux: Only use onboard by default if it's installed
 
 ---
  resources/etc/OpenBoard.config |  1 -
@@ -10,7 +10,7 @@ Subject: [PATCH 07/10] Linux: Only use onboard by default if it's installed
  3 files changed, 16 insertions(+), 2 deletions(-)
 
 diff --git a/resources/etc/OpenBoard.config b/resources/etc/OpenBoard.config
-index edf8a856..89f3a72e 100644
+index f7e8a023..e6f437bf 100644
 --- a/resources/etc/OpenBoard.config
 +++ b/resources/etc/OpenBoard.config
 @@ -22,7 +22,6 @@ ToolBarOrientationVertical=false
@@ -22,10 +22,10 @@ index edf8a856..89f3a72e 100644
  [Board]
  AutoSaveIntervalInMinutes=3
 diff --git a/src/core/UBSettings.cpp b/src/core/UBSettings.cpp
-index b51d47c0..1900de50 100644
+index 74962bb4..bd75ccbf 100644
 --- a/src/core/UBSettings.cpp
 +++ b/src/core/UBSettings.cpp
-@@ -227,6 +227,20 @@ void UBSettings::ValidateKeyboardPaletteKeyBtnSize()
+@@ -229,6 +229,20 @@ void UBSettings::ValidateKeyboardPaletteKeyBtnSize()
      boardKeyboardPaletteKeyBtnSize->set(supportedKeyboardSizes->at(0));
  }
  
@@ -46,17 +46,17 @@ index b51d47c0..1900de50 100644
  void UBSettings::init()
  {
      productWebUrl =  new UBSetting(this, "App", "ProductWebAddress", "http://www.openboard.ch");
-@@ -475,7 +489,7 @@ void UBSettings::init()
+@@ -477,7 +491,7 @@ void UBSettings::init()
  
      libIconSize = new UBSetting(this, "Library", "LibIconSize", defaultLibraryIconSize);
  
 -    useSystemOnScreenKeyboard = new UBSetting(this, "App", "UseSystemOnScreenKeyboard", true);
 +    useSystemOnScreenKeyboard = new UBSetting(this, "App", "UseSystemOnScreenKeyboard", checkSystemOnScreenKeyboardAvailable());
  
-     showDateColumnOnAlphabeticalSort = new UBSetting(this, "Document", "ShowDateColumnOnAlphabeticalSort", false);
-     emptyTrashForOlderDocuments = new UBSetting(this, "Document", "emptyTrashForOlderDocuments", false);
+     if (!UBPlatformUtils::hasSystemOnScreenKeyboard())
+     {
 diff --git a/src/core/UBSettings.h b/src/core/UBSettings.h
-index c6e0f229..0314f7ff 100644
+index e46948e9..4756a6f3 100644
 --- a/src/core/UBSettings.h
 +++ b/src/core/UBSettings.h
 @@ -52,6 +52,7 @@ class UBSettings : public QObject
@@ -68,5 +68,5 @@ index c6e0f229..0314f7ff 100644
      public:
  
 -- 
-2.40.1
+2.42.0
 

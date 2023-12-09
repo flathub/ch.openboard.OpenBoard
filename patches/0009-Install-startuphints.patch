@@ -1,0 +1,42 @@
+From 9cd39a2c5cedc750298cf8ad6e2466e6b408d7dc Mon Sep 17 00:00:00 2001
+From: =?UTF-8?q?Jonah=20Br=C3=BCchert?= <jbb@kaidan.im>
+Date: Sat, 9 Dec 2023 02:49:33 +0100
+Subject: [PATCH 9/9] Install startuphints
+
+---
+ OpenBoard.pro | 5 ++++-
+ 1 file changed, 4 insertions(+), 1 deletion(-)
+
+diff --git a/OpenBoard.pro b/OpenBoard.pro
+index 92219aab..072441d4 100644
+--- a/OpenBoard.pro
++++ b/OpenBoard.pro
+@@ -90,6 +90,7 @@ UB_BINARY.files = openboard
+ UB_ETC.files = resources/etc
+ UB_I18N.files = resources/i18n/*.qm
+ UB_LIBRARY.files = resources/library
++UB_STARTUPHINTS.files = resources/startupHints
+ UB_FONTS.files = resources/fonts
+ UB_CUSTOM_FONTS.files = resources/customizations/fonts
+ UB_DESKTOP.files = resources/ch.openboard.OpenBoard.desktop
+@@ -478,6 +479,7 @@ linux-g++* {
+     QMAKE_LFLAGS += -fopenmp
+     UB_BINARY.path = $$INSTALL_ROOT/$$PREFIX/bin/
+     UB_LIBRARY.path = $$INSTALL_ROOT/$$PREFIX/share/OpenBoard/
++    UB_STARTUPHINTS.path = $$INSTALL_ROOT/$$PREFIX/share/OpenBoard/
+     UB_I18N.path = $$INSTALL_ROOT/$$PREFIX/share/OpenBoard/i18n/
+     UB_ETC.path = $$INSTALL_ROOT/$$PREFIX/share/OpenBoard/
+     UB_FONTS.path = $$INSTALL_ROOT/$$PREFIX/share/OpenBoard
+@@ -536,7 +538,8 @@ INSTALLS = UB_BINARY \
+    UB_I18N \
+    UB_LIBRARY \
+    UB_DESKTOP \
+-   UB_ICON
++   UB_ICON \
++   UB_STARTUPHINTS
+ 
+ DISTFILES += \
+     resources/images/moveDown.svg \
+-- 
+2.42.0
+

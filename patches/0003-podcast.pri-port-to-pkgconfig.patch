@@ -1,17 +1,17 @@
-From db2c427dc3ebb2f726e78d28fa7c7250582ce1aa Mon Sep 17 00:00:00 2001
+From f84b4d065e119122eb3c569b0b0b14d9baf6b973 Mon Sep 17 00:00:00 2001
 From: =?UTF-8?q?Jonah=20Br=C3=BCchert?= <jbb.prv@gmx.de>
 Date: Tue, 11 Dec 2018 14:52:27 +0100
-Subject: [PATCH 03/10] podcast.pri: port to pkgconfig
+Subject: [PATCH 3/9] podcast.pri: port to pkgconfig
 
 ---
  src/podcast/podcast.pri | 15 +++------------
  1 file changed, 3 insertions(+), 12 deletions(-)
 
 diff --git a/src/podcast/podcast.pri b/src/podcast/podcast.pri
-index 873658c9..173a90c8 100644
+index 556d5d6b..bfe9406f 100644
 --- a/src/podcast/podcast.pri
 +++ b/src/podcast/podcast.pri
-@@ -57,22 +57,13 @@ linux-g++* {
+@@ -40,22 +40,13 @@ linux-g++* {
      SOURCES  += src/podcast/ffmpeg/UBFFmpegVideoEncoder.cpp \
                  src/podcast/ffmpeg/UBMicrophoneInput.cpp
  
@@ -38,5 +38,5 @@ index 873658c9..173a90c8 100644
      QMAKE_CXXFLAGS += -std=c++11 # move this to OpenBoard.pro when we can use C++11 on all platforms
  }
 -- 
-2.40.1
+2.42.0
 
