@@ -49,6 +49,91 @@
     <value key="GnomeSoftware::popular-background">https://raw.githubusercontent.com/flathub/ch.openboard.OpenBoard/master/ch.openboard.OpenBoard-thumb.png</value>
   </metadata>
   <releases>
+    <release type="stable" date="2023-12-09" version="1.7.0">
+      <description>
+        <p>New features</p>
+        <ul>
+          <li>Added the possibility to mark your documents as favorite. You can then drag and drop them from the library palette to the board, so you can change from one document to another quicker. Note that every recently open document is also temporary added to the Favorite folder in the Library palette, even if they are not marked as favorite. They will be removed when you exit OpenBoard, unless you mark them as favorite.</li>
+          <li>Added the possibility to import multiple files at once.</li>
+          <li>Added a "Hints and tips" dialog that shows up in Board Mode, at launch, to provide some basic knowledge on how to use OpenBoard. The dialog can also be displayed via the OpenBoard menu.</li>
+          <li>Removed obsolete "Web Browser" application from OpenBoard.</li>
+          <li>Added a "Replace All" option in the replacement dialog of an UBX import.</li>
+          <li>Added "Export background grid" and "Export background color" options to the preferences.</li>
+          <li>In Board mode, thumbnails on the left palette display the current page in "real-time"</li>
+          <li>Added the possibility to start in Document Mode.</li>
+          <li>UBZ documents can now be imported everywhere in the Documents tree.</li>
+          <li>Added the possibility to hide an object on extended screen when object is selected (useful for editable textboxes that you want to hide with the mask, and edit during class without revealing its content, for example). Note that your OS must be configured with "Extended Mode", not in "Clone Mode"</li>
+          <li>Added a popup asking user what to do when dropping an object above a widget, as the intent could be to drop it inside the widget or on the board.</li>
+          <li>The internal navigator was completely reworked to use a modern, Chrome-based browser engine including full support for HTML5. It represented a lot of work, almost entirely accomplished by @letsfindaway. A huge thank you for his continuous dedication to the project. This migration came with a bunch of rework, but also some cool adding. Among other things :</li>
+          <li>Improved support for creating widgets from web pages and detecting embed-able content.</li>
+          <li>Configurable Cookie handling.</li>
+          <li>Web Inspector for widget developers.</li>
+          <li>Pick images and PDFs from web pages and add them to the board.</li>
+          <li>Added the possibility to drag-and-drop or copy-paste of URLs to the board, to create a widget from the dropped web page, thanks to @letsfindaway.</li>
+          <li>Rework of the display management. Via the preferences, you can now organize your screens in a more user-friendly way, thanks to @letsfindaway.</li>
+          <li>Added a tool to draw Cartesian axes, thanks to @letsfindaway.</li>
+          <li>Added an option to show intermediate grid lines (5mm), thanks to @letsfindaway.</li>
+          <li>Added an option to enable a Seyes ruled background, thanks to @sebojolais. This option is <code>SeyesRuledBackground</code> and to be placed in the <code>[Board]</code> section.</li>
+          <li>Zoom with "Ctrl + mouse wheel". You can have a finer control of the zoom, using this functionality. You can also scroll in the current page (up and down with the mouse wheel, left and right with alt + mouse wheel). Original idea by @ootwch, improved by @letsfindaway.</li>
+          <li>Added a Camera widget, to embed your camera directly in the board, thanks to @letsfindaway.</li>
+          <li>Added the possibility to choose the text box size, by holding the mouse click until the desired width is reached (original idea by @sebojolais).</li>
+          <li>Added the possibility to run the main screen of OpenBoard in Windowed mode, thanks to @micolous.</li>
+          <li>Added support for ffmpeg-5, thanks to @letsfindaway.</li>
+          <li>Added support for Qt 6, with the precious help of @letsfindaway amd @JBBgameich.</li>
+          <li>Added support for Universal packaging on macOS.</li>
+        </ul>
+        <p>Improvements</p>
+        <ul>
+          <li>Added keyboard shortcuts to colors (1, 2, 3, 4 and 5).</li>
+          <li>Improved Desktop Mode UI so user knows what's selected easier. Also reduced the time to hold left click for sub-menus to show up</li>
+          <li>Toolbar and Preferences now also usable on low-resolution devices.</li>
+          <li>Improved height handling of text boxes. Height is now automatically handled and adapt through user's width resizes.</li>
+          <li>Improved "confirm-before-delete" dialogs, by making them more explicit on what is about to be deleted. Added better icons to illustrate each use case.</li>
+          <li>Display name in the tooltip of objects in the Library palette.</li>
+          <li>Store JPEG images in their native format, thanks to @letsfindaway.</li>
+          <li>Observe image rotation from image metadata, thanks to @letsfindaway.</li>
+          <li>Size of exported PDF page is now same as imported PDF page size. Thank you @letsfindaway for the help !</li>
+          <li>Allow dropping of images to sub-folders of the image library, thanks to @letsfindaway.</li>
+          <li>Better positioning of annotations, thanks to @letsfindaway.</li>
+          <li>Maintained compatibility for Qt 5.12, thanks to @letsfindaway and @JBBgameich</li>
+          <li>Many performance improvements, with the precious help of @letsfindaway.</li>
+        </ul>
+        <p>Bug fixes</p>
+        <ul>
+          <li>Fixed an issue where zooming in/out with an Axes tool on the board could end in a crash, thanks to @letsfindaway</li>
+          <li>Fixed an issue where, in a network-storage context, objects (PDF, audio, etc) could be removed from the document.</li>
+          <li>Fixed an issue where it was no longer possible to resize a widget, horizontally or vertically.</li>
+          <li>Fixed an issue where right-clicking on a textbox, would deselect it, making inoperative the actions of the context menu.</li>
+          <li>Fixed a crash where a not correctly readable PDF would prevent export from working. A new dialog is now showing up to explain user what's going on, before falling back to the export of the PDF pages as detailed (heavy) images.</li>
+          <li>Fixed an issue where user would have to click multiple times on "undo" to obtain the desired result.</li>
+          <li>Fixed an issue where it was not possible to change font size on an empty text box.</li>
+          <li>Fixed an issue where deleting the last character of a text box would provoke a resize of the box.</li>
+          <li>Fixed an issue where user could duplicate a page by accidentally drag and drop a thumbnail from Documents Mode to Board Mode.</li>
+          <li>Fixed an issue where rotating an object more than 90° would flip it horizontally.</li>
+          <li>Fixed an issue on macOS where clicking on "play" on a video would resize it to its original size.</li>
+          <li>Fixed an issue where it was not possible to open an UBZ by double-clicking on it with OpenBoard already launched.</li>
+          <li>Fixed an issue where an unwanted drag and drop could be started when simply clicking on a thumbnail on the left palette.</li>
+          <li>Fixed an issue where grid-size was not persisted, nor read, if crossed/ruled background was not selected (making axes tool loaded in another machine not corresponding to original).</li>
+          <li>Fixed an issue where an object in the right palette could be selected but displayed buttons not referring to it or its current state, after a drag and drop for example.</li>
+          <li>Fixed an issue where clicking on a selected item or on its delegate frame would deselect it.</li>
+          <li>Fixed an issue where Google Maps application was no longer working.</li>
+          <li>Fixed an issue where it was no longer possible to drag and drop a JPEG from a Pixabay search.</li>
+          <li>Fixed multiple crashes.</li>
+          <li>Several issues were fixed regarding interactivities, thanks to the migration made by @letsfindaway to a Chrome-based browser engine. Drop-down lists should now behave correctly, and it should be possible to scroll up and down when needed.</li>
+          <li>Many fixes related to handling of metadata, thanks to @letsfindaway.</li>
+          <li>Export of pages with widgets now export a snapshot of the widget content, thanks to @letsfindaway.</li>
+          <li>Fixed some typos, thanks to @cheese1.</li>
+        </ul>
+        <p>Known issues</p>
+        <ul>
+          <li>Some 3rd party widgets may no longer work, as the internal widget API was changed. Please report to the widget author as well as to the OpenBoard team to help updating the widget.</li>
+          <li>Adding a PDF to the board from the internal browser (right click -&gt; add to board) does not work consistently.</li>
+          <li>Some use cases remain where you can end up with documents at the same level having the same name.</li>
+          <li>An issue can occur, that is not clearly identified at this time, when importing an UBX, where users end up with the imported documents appearing multiple times in the documents tree, at the same level.</li>
+          <li>In Desktop Mode, Gnome Dock should be set to bottom position to workaround the issue with the OpenBoard left palette not being usable from above it</li>
+        </ul>
+      </description>
+    </release>
     <release type="stable" date="2022-06-13" version="1.6.4">
       <description>
         <p>New features</p>
