@@ -158,8 +158,8 @@ modules:
         QMAKEPATH: /app/lib
     sources:
       - type: archive
-        url: https://github.com/OpenBoard-org/OpenBoard/archive/refs/tags/v1.7.0.tar.gz
-        sha256: 03b5e6f728339528b8580542302f1d80567f814b10cb94b83df9c996eca125a3
+        url: https://github.com/OpenBoard-org/OpenBoard/archive/refs/tags/v1.6.4.tar.gz
+        sha256: a64a575cbc8dd9265f542e361ab77cf7fa612dc9ca34cbcdd6129606403ac8af
         x-checker-data:
           type: anitya
           project-id: 65331
