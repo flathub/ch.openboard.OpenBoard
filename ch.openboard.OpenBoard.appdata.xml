@@ -73,7 +73,7 @@
           <li>Rework of the display management. Via the preferences, you can now organize your screens in a more user-friendly way, thanks to @letsfindaway.</li>
           <li>Added a tool to draw Cartesian axes, thanks to @letsfindaway.</li>
           <li>Added an option to show intermediate grid lines (5mm), thanks to @letsfindaway.</li>
-          <li>Added an option to enable a Seyes ruled background, thanks to @sebojolais. This option is <code>SeyesRuledBackground</code> and to be placed in the <code>[Board]</code> section.</li>
+          <li>Added an option to enable a Seyes ruled background, thanks to @sebojolais. This option is SeyesRuledBackground and to be placed in the [Board] section.</li>
           <li>Zoom with "Ctrl + mouse wheel". You can have a finer control of the zoom, using this functionality. You can also scroll in the current page (up and down with the mouse wheel, left and right with alt + mouse wheel). Original idea by @ootwch, improved by @letsfindaway.</li>
           <li>Added a Camera widget, to embed your camera directly in the board, thanks to @letsfindaway.</li>
           <li>Added the possibility to choose the text box size, by holding the mouse click until the desired width is reached (original idea by @sebojolais).</li>
