@@ -1,6 +1,6 @@
 id: ch.openboard.OpenBoard
 runtime: org.kde.Platform
-runtime-version: "6.6"
+runtime-version: '6.6'
 sdk: org.kde.Sdk
 command: openboard
 finish-args:
@@ -13,7 +13,7 @@ finish-args:
   - --filesystem=home
 separate-locales: false
 base: io.qt.qtwebengine.BaseApp
-base-version: "6.6"
+base-version: '6.6'
 cleanup:
   - /include
   - /lib/pkgconfig
@@ -134,8 +134,8 @@ modules:
       - --enable-decoder=theora
     sources:
       - type: archive
-        url: https://www.ffmpeg.org/releases/ffmpeg-6.1.tar.xz
-        sha256: 488c76e57dd9b3bee901f71d5c95eaf1db4a5a31fe46a28654e837144207c270
+        url: https://www.ffmpeg.org/releases/ffmpeg-6.1.1.tar.xz
+        sha256: 8684f4b00f94b85461884c3719382f1261f0d9eb3d59640a1f4ac0873616f968
         x-checker-data:
           type: anitya
           project-id: 5405
