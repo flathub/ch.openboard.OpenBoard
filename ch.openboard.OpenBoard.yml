@@ -60,8 +60,8 @@ modules:
       - --disable-cli
     sources:
       - type: archive
-        url: https://deb.debian.org/debian/pool/main/x/x264/x264_0.164.3095+gitbaee400.orig.tar.gz
-        sha256: 8b237e94b08c196a1da22f2f25875f10be4cff3648df4eeff21e00da8f683fc2
+        url: https://deb.debian.org/debian/pool/main/x/x264/x264_0.164.3108+git31e19f9.orig.tar.gz
+        sha256: 41606cb8e788a7f8c4514290646d4ba5c7bc68d9e1ccd1a73f446a90546913eb
         # x264 doesn't have releases, so just track whatever debian is shipping
         x-checker-data:
           type: debian-repo
