@@ -49,6 +49,47 @@
     <value key="GnomeSoftware::popular-background">https://raw.githubusercontent.com/flathub/ch.openboard.OpenBoard/master/ch.openboard.OpenBoard-thumb.png</value>
   </metadata>
   <releases>
+    <release type="stable" date="2023-05-08" version="1.7.1">
+      <description>
+        <p>New features</p>
+        <ul>
+          <li>added the possibility to move tools (ruler, compass, etc) using arrow keys.</li>
+          <li>added a new Latex2SVG application converting Latex formulas to SVG, that you can then drag and drop on the board. Also supports mhchem for chemistry</li>
+          <li>added CMake support for community-driven Linux builds, thanks to @letsfindaway and @Vekhir.</li>
+        </ul>
+
+        <p>Improvements</p>
+        <ul>
+          <li>simplified the rules to be authorized to put a new text on the board, when close to another text box.</li>
+          <li>Improved performances on document loading time, especially for heavy documents, containing a lot of annotations.</li>
+          <li>changed delete icons' tooltip according to their text</li>
+          <li>migrated Windows build from xpdf to poppler</li>
+          <li>improved zLevel consistency and how the users can change it. A simple click on the "Layer Up" and "Layer Down" now simply increments or decrements the zLevel of the targeted object. Long click behavior remains unchanged.</li>
+        </ul>
+
+        <p>Bug fixes</p>
+        <ul>
+          <li>workaround for an issue related to QTBUG-79216, where dead keys were simply ignored in web widgets. The workaround fixes completely the issue on Linux, but not on macOS. You can workaround</li>
+          <li>the issue by giving focus of an input of the widget and pressing Next page then previous page on the Board toolbar, or by simply reloading the page when possible.</li>
+          <li>fixed an issue where the mask would preserve aspect ratio when using the bottom right handle to resize it.</li>
+          <li>fixed an issue where a newly created widget would not be visible until next launch</li>
+          <li>fixed an issue where removing from board a newly created widget would erase it from library and disk</li>
+          <li>fixed an issue where drag and dropping an object from a widget to the board would never trigger mouseReleaseEvent, ending with the widget being moved when not intended</li>
+          <li>fixed an issue where object zLevels would not be correctly set</li>
+          <li>fixed crashes occurring when using the 'Add' button's functionalities in Documents Mode</li>
+          <li>fixed a crash occurring when trying to drag and drop an image already on the board</li>
+          <li>fixed an issue where an image would be copy-pasted at bad off-screen positions on Windows</li>
+          <li>fixed a crash occuring when directly exiting OpenBoard from Board Mode on heavy documents.</li>
+          <li>fixed an issue where the scale of a pdf item was not preserved when copying the page to another document, with the help of @letsfindaway</li>
+          <li>fixed an issue where the eraser was not working when completely inside polygon, thanks to @letsfindaway</li>
+          <li>fixed incorrect sRGB profile and some files rights, thanks to @letsfindaway</li>
+          <li>fixed an issue by avoiding access to uninitialized DisplayManager, thanks to @letsfindaway</li>
+          <li>fixed ruler icons behaviors when zooming, thanks to @Vekhir</li>
+          <li>fixed windows silent install parameters for vcredist, thanks to @PatricCunhaforWork</li>
+        </ul>
+      </description>
+    </release>
+
     <release type="stable" date="2023-12-09" version="1.7.0">
       <description>
         <p>New features</p>
