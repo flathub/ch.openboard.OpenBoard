@@ -147,19 +147,13 @@ modules:
       - /app/share
 
   - name: openboard
-    buildsystem: qmake
-    config-opts:
-      - CONFIG += c++17
-      - PREFIX = ${FLATPAK_DEST}
+    buildsystem: cmake-ninja
     build-commands:
       - install -Dm644 -t ${FLATPAK_DEST}/share/appdata ${FLATPAK_ID}.appdata.xml
-    build-options:
-      env:
-        QMAKEPATH: /app/
     sources:
       - type: archive
-        url: https://github.com/OpenBoard-org/OpenBoard/archive/refs/tags/v1.7.0.tar.gz
-        sha256: 03b5e6f728339528b8580542302f1d80567f814b10cb94b83df9c996eca125a3
+        url: https://github.com/OpenBoard-org/OpenBoard/archive/refs/tags/v1.7.1rc-240202.tar.gz
+        sha256: 99cef28d0b40f2f7904552456f26c4c3f8a653088e2f189c5036f4a8bf26e43c
         x-checker-data:
           type: anitya
           project-id: 65331
@@ -170,22 +164,8 @@ modules:
         commands:
           - lrelease OpenBoard.pro
       - type: patch
-        path: patches/0001-Rewrite-libs.pri.patch
-      - type: patch
-        path: patches/0002-Install-to-correct-directories-on-linux.patch
-      - type: patch
-        path: patches/0003-podcast.pri-port-to-pkgconfig.patch
-      - type: patch
-        path: patches/0004-Use-QStandardPaths-to-locate-resources.patch
-      - type: patch
-        path: patches/0005-Add-svg-icon.patch
-      - type: patch
-        path: patches/0006-pro-Remove-UB_THIRDPARTY_INTERACTIVE.patch
-      - type: patch
         path: patches/0007-Linux-Only-use-onboard-by-default-if-it-s-installed.patch
       - type: patch
         path: patches/0008-feat-disable-software-update-check.patch
-      - type: patch
-        path: patches/0009-Install-startuphints.patch
       - type: file
         path: ch.openboard.OpenBoard.appdata.xml
