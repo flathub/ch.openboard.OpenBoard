@@ -45,8 +45,8 @@ modules:
       - -DENABLE_BOOST=OFF
     sources:
       - type: archive
-        url: https://poppler.freedesktop.org/poppler-24.04.0.tar.xz
-        sha256: 1e804ec565acf7126eb2e9bb3b56422ab2039f7e05863a5dfabdd1ffd1bb77a7
+        url: https://poppler.freedesktop.org/poppler-24.05.0.tar.xz
+        sha256: d8c5eb30b50285ad9f0af8c6335cc2d3b9597fca475cbc2598a5479fa379f779
         x-checker-data:
           type: anitya
           project-id: 3686
@@ -134,8 +134,8 @@ modules:
       - --enable-decoder=theora
     sources:
       - type: archive
-        url: https://www.ffmpeg.org/releases/ffmpeg-6.1.1.tar.xz
-        sha256: 8684f4b00f94b85461884c3719382f1261f0d9eb3d59640a1f4ac0873616f968
+        url: https://www.ffmpeg.org/releases/ffmpeg-7.0.tar.xz
+        sha256: 4426a94dd2c814945456600c8adfc402bee65ec14a70e8c531ec9a2cd651da7b
         x-checker-data:
           type: anitya
           project-id: 5405
@@ -158,8 +158,8 @@ modules:
         QMAKEPATH: /app/
     sources:
       - type: archive
-        url: https://github.com/OpenBoard-org/OpenBoard/archive/refs/tags/v1.7.0.tar.gz
-        sha256: 03b5e6f728339528b8580542302f1d80567f814b10cb94b83df9c996eca125a3
+        url: https://github.com/OpenBoard-org/OpenBoard/archive/refs/tags/v1.7.1.tar.gz
+        sha256: 5c9fcb54bc1598b4b7026e6ecca07137660dd3d45bda472a5710acf600a2a22f
         x-checker-data:
           type: anitya
           project-id: 65331
