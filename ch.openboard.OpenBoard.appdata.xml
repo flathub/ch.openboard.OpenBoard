@@ -49,7 +49,7 @@
     <value key="GnomeSoftware::popular-background">https://raw.githubusercontent.com/flathub/ch.openboard.OpenBoard/master/ch.openboard.OpenBoard-thumb.png</value>
   </metadata>
   <releases>
-    <release type="stable" date="2023-05-08" version="1.7.1">
+    <release type="stable" date="2024-05-08" version="1.7.1">
       <description>
         <p>New features</p>
         <ul>
