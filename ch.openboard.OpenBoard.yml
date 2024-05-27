@@ -164,5 +164,7 @@ modules:
         path: patches/0007-Linux-Only-use-onboard-by-default-if-it-s-installed.patch
       - type: patch
         path: patches/0008-feat-disable-software-update-check.patch
+      - type: patch
+        path: patches/0001-Use-C-20-to-be-able-to-compile-against-poppler-24.05.patch
       - type: file
         path: ch.openboard.OpenBoard.appdata.xml
