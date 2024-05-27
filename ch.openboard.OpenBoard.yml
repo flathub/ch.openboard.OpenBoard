@@ -45,8 +45,8 @@ modules:
       - -DENABLE_BOOST=OFF
     sources:
       - type: archive
-        url: https://poppler.freedesktop.org/poppler-24.04.0.tar.xz
-        sha256: 1e804ec565acf7126eb2e9bb3b56422ab2039f7e05863a5dfabdd1ffd1bb77a7
+        url: https://poppler.freedesktop.org/poppler-24.05.0.tar.xz
+        sha256: d8c5eb30b50285ad9f0af8c6335cc2d3b9597fca475cbc2598a5479fa379f779
         x-checker-data:
           type: anitya
           project-id: 3686
@@ -164,5 +164,7 @@ modules:
         path: patches/0007-Linux-Only-use-onboard-by-default-if-it-s-installed.patch
       - type: patch
         path: patches/0008-feat-disable-software-update-check.patch
+      - type: patch
+        path: patches/0001-Use-C-20-to-be-able-to-compile-against-poppler-24.05.patch
       - type: file
         path: ch.openboard.OpenBoard.appdata.xml
