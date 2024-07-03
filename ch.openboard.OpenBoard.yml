@@ -45,8 +45,8 @@ modules:
       - -DENABLE_BOOST=OFF
     sources:
       - type: archive
-        url: https://poppler.freedesktop.org/poppler-24.05.0.tar.xz
-        sha256: d8c5eb30b50285ad9f0af8c6335cc2d3b9597fca475cbc2598a5479fa379f779
+        url: https://poppler.freedesktop.org/poppler-24.07.0.tar.xz
+        sha256: 19eb4f49198e4ae3fd9e5a6cf24d0fc7e674e8802046a7de14baab1e40cc2f1d
         x-checker-data:
           type: anitya
           project-id: 3686
@@ -134,8 +134,8 @@ modules:
       - --enable-decoder=theora
     sources:
       - type: archive
-        url: https://www.ffmpeg.org/releases/ffmpeg-6.1.1.tar.xz
-        sha256: 8684f4b00f94b85461884c3719382f1261f0d9eb3d59640a1f4ac0873616f968
+        url: https://www.ffmpeg.org/releases/ffmpeg-7.0.1.tar.xz
+        sha256: bce9eeb0f17ef8982390b1f37711a61b4290dc8c2a0c1a37b5857e85bfb0e4ff
         x-checker-data:
           type: anitya
           project-id: 5405
