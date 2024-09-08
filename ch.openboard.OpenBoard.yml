@@ -9,7 +9,8 @@ finish-args:
   - --socket=x11
   - --socket=wayland
   - --socket=pulseaudio
-  - --device=dri
+  # dri and camera
+  - --device=all
   - --filesystem=home
 separate-locales: false
 base: io.qt.qtwebengine.BaseApp
