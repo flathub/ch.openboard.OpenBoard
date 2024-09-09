@@ -15,6 +15,14 @@ finish-args:
 separate-locales: false
 base: io.qt.qtwebengine.BaseApp
 base-version: '6.7'
+add-extensions:
+  org.freedesktop.Platform.ffmpeg-full:
+    directory: lib/ffmpeg
+    add-ld-path: .
+    version: '23.08'
+    no-autodownload: true
+    autodelete: false
+
 cleanup:
   - /include
   - /lib/pkgconfig
@@ -75,82 +83,11 @@ modules:
       - /app/include
       - /app/pkgconfig
 
-  - name: ffmpeg
-    build-options:
-      env:
-        PKG_CONFIG_PATH: /app/lib/pkgconfig
-    config-opts:
-      - --prefix=/app/
-      - --enable-shared
-      - --disable-static
-      - --disable-doc
-      - --enable-gpl
-      - --enable-version3
-      - --disable-nonfree
-      - --enable-optimizations
-      - --enable-pthreads
-      - --disable-bzlib
-      - --disable-libgsm
-      - --enable-libtheora
-      - --enable-libvorbis
-      - --enable-libvpx
-      - --enable-libx264
-      - --enable-zlib
-      - --disable-libxcb
-      - --disable-lzma
-      - --disable-programs
-      - --disable-network
-      - --disable-protocols
-      - --enable-protocol=file
-      - --disable-devices
-      - --enable-muxer=avi
-      - --enable-muxer=h264
-      - --enable-muxer=mov
-      - --enable-muxer=mp4
-      - --enable-muxer=ogg
-      - --enable-muxer=webm
-      - --enable-demuxer=avi
-      - --enable-demuxer=h264
-      - --enable-demuxer=mov
-      - --enable-demuxer=mp3
-      - --enable-demuxer=ogg
-      - --enable-demuxer=wav
-      - --enable-parser=h264
-      - --enable-parser=vorbis
-      - --enable-encoder=aac
-      - --enable-encoder=libtheora
-      - --enable-encoder=libvorbis
-      - --enable-encoder=libvpx_vp8
-      - --enable-encoder=libvpx_vp9
-      - --enable-encoder=libx264
-      - --enable-encoder=mpeg4
-      - --enable-decoder=aac
-      - --enable-decoder=h264
-      - --enable-decoder=libvorbis
-      - --enable-decoder=libvpx_vp8
-      - --enable-decoder=libvpx_vp9
-      - --enable-decoder=mp3
-      - --enable-decoder=mpeg4
-      - --enable-decoder=pcm_s16le
-      - --enable-decoder=theora
-    sources:
-      - type: archive
-        url: https://www.ffmpeg.org/releases/ffmpeg-7.0.2.tar.xz
-        sha256: 8646515b638a3ad303e23af6a3587734447cb8fc0a0c064ecdb8e95c4fd8b389
-        x-checker-data:
-          type: anitya
-          project-id: 5405
-          stable-only: true
-          url-template: https://www.ffmpeg.org/releases/ffmpeg-$version.tar.xz
-    cleanup:
-      - /app/include
-      - /app/lib/pkgconfig
-      - /app/share
-
   - name: openboard
     buildsystem: cmake-ninja
     build-commands:
       - install -Dm644 -t ${FLATPAK_DEST}/share/appdata ${FLATPAK_ID}.appdata.xml
+      - mkdir -p /app/lib/ffmpeg
     sources:
       - type: archive
         url: https://github.com/OpenBoard-org/OpenBoard/archive/refs/tags/v1.7.1.tar.gz
