@@ -46,8 +46,8 @@ modules:
       - -DENABLE_BOOST=OFF
     sources:
       - type: archive
-        url: https://poppler.freedesktop.org/poppler-24.05.0.tar.xz
-        sha256: d8c5eb30b50285ad9f0af8c6335cc2d3b9597fca475cbc2598a5479fa379f779
+        url: https://poppler.freedesktop.org/poppler-24.09.0.tar.xz
+        sha256: ebd857987e2395608c69fdc44009692d5906f13b612c5280beff65a0b75dc255
         x-checker-data:
           type: anitya
           project-id: 3686
@@ -135,8 +135,8 @@ modules:
       - --enable-decoder=theora
     sources:
       - type: archive
-        url: https://www.ffmpeg.org/releases/ffmpeg-6.1.1.tar.xz
-        sha256: 8684f4b00f94b85461884c3719382f1261f0d9eb3d59640a1f4ac0873616f968
+        url: https://www.ffmpeg.org/releases/ffmpeg-7.0.2.tar.xz
+        sha256: 8646515b638a3ad303e23af6a3587734447cb8fc0a0c064ecdb8e95c4fd8b389
         x-checker-data:
           type: anitya
           project-id: 5405
@@ -167,5 +167,7 @@ modules:
         path: patches/0008-feat-disable-software-update-check.patch
       - type: patch
         path: patches/0001-Use-C-20-to-be-able-to-compile-against-poppler-24.05.patch
+      - type: patch
+        path: patches/0009-support-ffmpeg-7.patch
       - type: file
         path: ch.openboard.OpenBoard.appdata.xml
