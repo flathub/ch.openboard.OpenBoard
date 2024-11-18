@@ -86,6 +86,8 @@ modules:
 
   - name: openboard
     buildsystem: cmake-ninja
+    config-opts:
+      - -DCMAKE_CXX_STANDARD=20  # For poppler
     build-commands:
       - install -Dm644 -t ${FLATPAK_DEST}/share/appdata ${FLATPAK_ID}.appdata.xml
       - mkdir -p /app/lib/ffmpeg
