@@ -1,7 +1,7 @@
-From 20bee2f17765dde877f3243b1723e76cc3a4a3cb Mon Sep 17 00:00:00 2001
+From 897fa555762a30c6a1ad7ce59e07afdf7b73ec47 Mon Sep 17 00:00:00 2001
 From: =?UTF-8?q?Jonah=20Br=C3=BCchert?= <jbb.prv@gmx.de>
 Date: Wed, 10 Apr 2019 21:47:07 +0200
-Subject: [PATCH 7/9] Linux: Only use onboard by default if it's installed
+Subject: [PATCH 1/2] Linux: Only use onboard by default if it's installed
 
 ---
  resources/etc/OpenBoard.config |  1 -
@@ -10,10 +10,10 @@ Subject: [PATCH 7/9] Linux: Only use onboard by default if it's installed
  3 files changed, 16 insertions(+), 2 deletions(-)
 
 diff --git a/resources/etc/OpenBoard.config b/resources/etc/OpenBoard.config
-index f7e8a023..e6f437bf 100644
+index ce77e232..ce2f6816 100644
 --- a/resources/etc/OpenBoard.config
 +++ b/resources/etc/OpenBoard.config
-@@ -22,7 +22,6 @@ ToolBarOrientationVertical=false
+@@ -21,7 +21,6 @@ ToolBarOrientationVertical=false
  ToolBarPositionedAtTop=true
  TutorialUrl=http://www.openboard.ch
  UseMultiscreenMode=true
@@ -22,7 +22,7 @@ index f7e8a023..e6f437bf 100644
  [Board]
  AutoSaveIntervalInMinutes=3
 diff --git a/src/core/UBSettings.cpp b/src/core/UBSettings.cpp
-index 74962bb4..bd75ccbf 100644
+index 645063e5..5e5f8f3e 100644
 --- a/src/core/UBSettings.cpp
 +++ b/src/core/UBSettings.cpp
 @@ -229,6 +229,20 @@ void UBSettings::ValidateKeyboardPaletteKeyBtnSize()
@@ -46,7 +46,7 @@ index 74962bb4..bd75ccbf 100644
  void UBSettings::init()
  {
      productWebUrl =  new UBSetting(this, "App", "ProductWebAddress", "http://www.openboard.ch");
-@@ -477,7 +491,7 @@ void UBSettings::init()
+@@ -473,7 +487,7 @@ void UBSettings::init()
  
      libIconSize = new UBSetting(this, "Library", "LibIconSize", defaultLibraryIconSize);
  
@@ -56,7 +56,7 @@ index 74962bb4..bd75ccbf 100644
      if (!UBPlatformUtils::hasSystemOnScreenKeyboard())
      {
 diff --git a/src/core/UBSettings.h b/src/core/UBSettings.h
-index e46948e9..4756a6f3 100644
+index 53a60883..83dd52f0 100644
 --- a/src/core/UBSettings.h
 +++ b/src/core/UBSettings.h
 @@ -52,6 +52,7 @@ class UBSettings : public QObject
@@ -68,5 +68,5 @@ index e46948e9..4756a6f3 100644
      public:
  
 -- 
-2.42.0
+2.47.0
 
