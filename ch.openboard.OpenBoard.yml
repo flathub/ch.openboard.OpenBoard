@@ -98,14 +98,9 @@ modules:
           project-id: 65331
           stable-only: true
           url-template: https://github.com/OpenBoard-org/OpenBoard/archive/refs/tags/v$version.tar.gz
-
       - type: patch
-        path: patches/0007-Linux-Only-use-onboard-by-default-if-it-s-installed.patch
+        path: patches/0001-Linux-Only-use-onboard-by-default-if-it-s-installed.patch
       - type: patch
-        path: patches/0008-feat-disable-software-update-check.patch
-      - type: patch
-        path: patches/0001-Use-C-20-to-be-able-to-compile-against-poppler-24.05.patch
-      - type: patch
-        path: patches/0009-support-ffmpeg-7.patch
+        path: patches/0002-feat-disable-software-update-check.patch
       - type: file
         path: ch.openboard.OpenBoard.appdata.xml

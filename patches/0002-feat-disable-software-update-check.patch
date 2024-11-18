@@ -1,7 +1,7 @@
-From a0230b08fbd57862ae2c1eeef5a496edc65703ff Mon Sep 17 00:00:00 2001
+From aea94e5f49ea7c307a2b846277f50b190e030d20 Mon Sep 17 00:00:00 2001
 From: letsfindaway <me@letsfindaway.de>
 Date: Wed, 16 Nov 2022 08:31:29 +0100
-Subject: [PATCH 8/9] feat: disable software update check
+Subject: [PATCH 2/2] feat: disable software update check
 
 - for packages maintained by a Linux distribution,
   a software update check is not relevant
@@ -13,12 +13,11 @@ Subject: [PATCH 8/9] feat: disable software update check
  2 files changed, 3 insertions(+), 3 deletions(-)
 
 diff --git a/resources/etc/OpenBoard.config b/resources/etc/OpenBoard.config
-index e6f437bf..2c7c9a22 100644
+index ce2f6816..0d37ace8 100644
 --- a/resources/etc/OpenBoard.config
 +++ b/resources/etc/OpenBoard.config
-@@ -1,9 +1,8 @@
+@@ -1,8 +1,7 @@
  [App]
- AngleTolerance=4
 -HideCheckForSoftwareUpdate=false
 +HideCheckForSoftwareUpdate=true
  HideSwapDisplayScreens=true
@@ -29,7 +28,7 @@ index e6f437bf..2c7c9a22 100644
  FavoriteToolURIs=openboardtool://openboard/mask, openboardtool://ruler, openboardtool://compass, openboardtool://protractor, openboardtool://triangle, openboardtool://magnifier, openboardtool://cache
  IsInSoftwareUpdateProcess=false
 diff --git a/src/core/UBPreferencesController.cpp b/src/core/UBPreferencesController.cpp
-index 79888988..d2693514 100644
+index ed0e393d..b67c415c 100644
 --- a/src/core/UBPreferencesController.cpp
 +++ b/src/core/UBPreferencesController.cpp
 @@ -85,6 +85,7 @@ UBPreferencesController::UBPreferencesController(QWidget *parent)
@@ -41,5 +40,5 @@ index 79888988..d2693514 100644
  
      connect(UBApplication::displayManager, &UBDisplayManager::availableScreenCountChanged, this, &UBPreferencesController::adjustScreensPreferences);
 -- 
-2.42.0
+2.47.0
 
