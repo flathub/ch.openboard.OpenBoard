@@ -41,6 +41,7 @@ modules:
 
   - name: poppler
     buildsystem: cmake-ninja
+    builddir: true
     cleanup:
       - /bin/
     config-opts:
