@@ -13,7 +13,9 @@
   <summary xml:lang="it">Lavagna interattiva per la scuola e l'università</summary>
   <project_license>GPL-3.0-only</project_license>
   <metadata_license>CC0-1.0</metadata_license>
-  <developer_name>Département de l'Instruction Publique (DIP-SEM)</developer_name>
+  <developer id="ch.ge">
+    <name>Département de l'Instruction Publique (DIP-SEM)</name>
+  </developer>
   <description>
     <p>OpenBoard is an open source cross-platform teaching software for interactive whiteboard designed primarily for use in schools and universities. It can be used both with interactive whiteboards or in a dual-screen setup with a pen-tablet display and a beamer.</p>
     <p xml:lang="es">OpenBoard es un software de enseñanza de plataforma cruzada de código abierto para cuadros interactivos diseñado principalmente para uso en escuelas y universidades. Se puede utilizar con marcos interactivos o en una configuración de pantalla dual con un monitor de escritorio gráfico y un proyector.</p>
@@ -49,8 +51,33 @@
     <value key="GnomeSoftware::popular-background">https://raw.githubusercontent.com/flathub/ch.openboard.OpenBoard/master/ch.openboard.OpenBoard-thumb.png</value>
   </metadata>
   <releases>
-    <release version="1.7.2" date="2024-11-18">
-      <description></description>
+    <release type="stable" version="1.7.2" date="2024-11-18">
+      <description>
+        <p>New features</p>
+        <ul>
+          <li>Added the "Snap-to-Grid" feature, which allows the user to snap elements on the lines of the backgrounds. If no ruled/crossed background is displayed, the feature uses the crossed background setting.</li>
+        </ul>
+        <p>Improvements</p>
+        <ul>
+          <li>Scenes are loaded on idle time of the main thread when possible</li>
+          <li>Improved a bit how thumbnails are handled to avoid useless and heavy operations</li>
+          <li>Export axes tools when exporting document to PDF</li>
+          <li>The current rotation angle is now displayed for any object, also for a group of objets being rotated</li>
+          <li>The current z-index of an object is now displayed when clicking on the layer up/down buttons.</li>
+          <li>It is now possible to draw on each side of the triangle</li>
+          <li>It is now possible to draw beyond the triangle/ruler limits</li>
+          <li>The rotation center is now the triangle corner instead of the 0 graduation</li>
+          <li>Screen gray borders are now transparent and reflects the secondary screen resolution</li>
+          <li>Upgraded from Qt 5 to Qt 6 on all officially supported platforms</li>
+        </ul>
+        <p>Bug Fixes</p>
+        <ul>
+          <li>Fixed a bug where annotating the first page when OpenBoard launches and exiting from the Board would make the application crash and the data lost</li>
+          <li>Fixed impossible to read a video on Debian</li>
+          <li>Dice interactivity was not working</li>
+          <li>Fixed several crashes</li>
+        </ul>
+      </description>
     </release>
     <release type="stable" date="2024-05-08" version="1.7.1">
       <description>
