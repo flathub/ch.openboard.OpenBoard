@@ -54,8 +54,8 @@ modules:
       - -DENABLE_BOOST=OFF
     sources:
       - type: archive
-        url: https://poppler.freedesktop.org/poppler-24.10.0.tar.xz
-        sha256: 58ed1849810f04a10b37c7ff6f3e411845c8a57d731d599d0045acc7a7fff09d
+        url: https://poppler.freedesktop.org/poppler-24.11.0.tar.xz
+        sha256: 7723d880565211740c13649d24a300257b86ddd7fa2d208187ff7e5cc8dfbd58
         x-checker-data:
           type: anitya
           project-id: 3686
@@ -90,8 +90,8 @@ modules:
       - mkdir -p /app/lib/ffmpeg
     sources:
       - type: archive
-        url: https://github.com/OpenBoard-org/OpenBoard/archive/refs/tags/v1.7.1.tar.gz
-        sha256: 5c9fcb54bc1598b4b7026e6ecca07137660dd3d45bda472a5710acf600a2a22f
+        url: https://github.com/OpenBoard-org/OpenBoard/archive/refs/tags/v1.7.2.tar.gz
+        sha256: 47ef1ab60f21280b907d9205c7381537be640a64a4808861fb83b70d1d519370
         x-checker-data:
           type: anitya
           project-id: 65331
