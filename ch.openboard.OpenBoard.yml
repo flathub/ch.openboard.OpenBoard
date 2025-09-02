@@ -53,6 +53,7 @@ modules:
       - -DBUILD_GTK_TESTS=OFF
       - -DENABLE_GTK_DOC=OFF
       - -DENABLE_BOOST=OFF
+      - -DENABLE_GPGME=OFF
     sources:
       - type: archive
         url: https://poppler.freedesktop.org/poppler-25.09.0.tar.xz
