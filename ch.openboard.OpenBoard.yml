@@ -64,27 +64,6 @@ modules:
           stable-only: true
           url-template: https://poppler.freedesktop.org/poppler-$version.tar.xz
 
-  - name: x264
-    config-opts:
-      - --prefix=/app/
-      - --enable-shared
-      - --disable-cli
-    sources:
-      - type: archive
-        url: https://deb.debian.org/debian/pool/main/x/x264/x264_0.165.3222+gitb35605ac.orig.tar.gz
-        sha256: 4672fb415c34bf16e2ed9cd43d1ab865158f586c7f1406d507f7f44516fb5ec8
-        # x264 doesn't have releases, so just track whatever debian is shipping
-        x-checker-data:
-          type: debian-repo
-          package-name: x264
-          root: https://deb.debian.org/debian
-          dist: unstable
-          component: main
-          source: true
-    cleanup:
-      - /app/include
-      - /app/pkgconfig
-
   - name: openboard
     buildsystem: cmake-ninja
     config-opts:
