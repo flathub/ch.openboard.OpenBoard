@@ -15,13 +15,6 @@ finish-args:
 separate-locales: false
 base: io.qt.qtwebengine.BaseApp
 base-version: '6.10'
-add-extensions:
-  org.freedesktop.Platform.ffmpeg-full:
-    directory: lib/ffmpeg
-    add-ld-path: .
-    version: '25.08'
-    no-autodownload: true
-    autodelete: false
 
 cleanup:
   - /include
