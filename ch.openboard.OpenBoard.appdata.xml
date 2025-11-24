@@ -439,4 +439,11 @@
   <provides>
     <binary>openboard</binary>
   </provides>
+  <keywords>
+    <keyword>interactive whiteboard</keyword>
+    <keyword>educational software</keyword>
+    <keyword>collaborative learning</keyword>
+    <keyword>interactive presentation tool</keyword>
+    <keyword>student engagement</keyword>
+  </keywords>
 </component>
