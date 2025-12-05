@@ -79,3 +79,5 @@ modules:
         path: patches/0002-feat-disable-software-update-check.patch
       - type: file
         path: ch.openboard.OpenBoard.appdata.xml
+      - type: patch
+        path: patches/fix-poppler.patch
