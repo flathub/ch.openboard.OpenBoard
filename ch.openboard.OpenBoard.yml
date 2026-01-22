@@ -49,8 +49,8 @@ modules:
       - -DENABLE_GPGME=OFF
     sources:
       - type: archive
-        url: https://poppler.freedesktop.org/poppler-25.12.0.tar.xz
-        sha256: c18b40eb36b1a0c5b86e29ca054bf0770304583da4f2cdd42fe86eca6a20de48
+        url: https://poppler.freedesktop.org/poppler-26.01.0.tar.xz
+        sha256: 1cb944a4b88847f5fb6551683bc799db59f04990f5d8be07aba2acbf38601089
         x-checker-data:
           type: anitya
           project-id: 3686
@@ -66,8 +66,8 @@ modules:
       - mkdir -p /app/lib/ffmpeg
     sources:
       - type: archive
-        url: https://github.com/OpenBoard-org/OpenBoard/archive/refs/tags/v1.7.3.tar.gz
-        sha256: 55532df042e3a5b36e1f6f1e29916d3bbd01796d920782fa1f8a03438dcddd9c
+        url: https://github.com/OpenBoard-org/OpenBoard/archive/refs/tags/v1.7.4.tar.gz
+        sha256: 9948a2fec3920679087422d5c1c1b18839e2a95cee5b485d7584bb972b54a13c
         x-checker-data:
           type: anitya
           project-id: 65331
