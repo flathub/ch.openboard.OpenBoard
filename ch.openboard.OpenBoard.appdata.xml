@@ -29,6 +29,7 @@
   <url type="bugtracker">https://github.com/OpenBoard-org/OpenBoard/issues</url>
   <url type="help">https://openboard.ch/support.en.html</url>
   <url type="translate">https://github.com/OpenBoard-org/openboard/pulls</url>
+  <url type="vcs-browser">https://github.com/OpenBoard-org/openboard</url>
   <content_rating type="oars-1.0"/>
   <update_contact>jbb_AT_kaidan.im</update_contact>
   <translation type="qt">OpenBoard</translation>
