@@ -49,8 +49,8 @@ modules:
       - -DENABLE_GPGME=OFF
     sources:
       - type: archive
-        url: https://poppler.freedesktop.org/poppler-26.01.0.tar.xz
-        sha256: 1cb944a4b88847f5fb6551683bc799db59f04990f5d8be07aba2acbf38601089
+        url: https://poppler.freedesktop.org/poppler-26.02.0.tar.xz
+        sha256: dded8621f7b2f695c91063aab1558691c8418374cd583501e89ed39487e7ab77
         x-checker-data:
           type: anitya
           project-id: 3686
@@ -66,8 +66,8 @@ modules:
       - mkdir -p /app/lib/ffmpeg
     sources:
       - type: archive
-        url: https://github.com/OpenBoard-org/OpenBoard/archive/refs/tags/v1.7.5.tar.gz
-        sha256: 31cdb4049402b93a346637bda537d528ef53c84d70598f0861ad9d77ad3e37eb
+        url: https://github.com/OpenBoard-org/OpenBoard/archive/refs/tags/v1.7.6.tar.gz
+        sha256: 4c19f1f0ac57f80fb48be0b9375fcb8eadba12b5b48a6b1ddaed31ef2a047009
         x-checker-data:
           type: anitya
           project-id: 65331
@@ -77,5 +77,7 @@ modules:
         path: patches/0001-Linux-Only-use-onboard-by-default-if-it-s-installed.patch
       - type: patch
         path: patches/0002-feat-disable-software-update-check.patch
+      - type: patch
+        path: patches/1434.patch
       - type: file
         path: ch.openboard.OpenBoard.appdata.xml
