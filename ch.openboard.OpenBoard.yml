@@ -49,8 +49,8 @@ modules:
       - -DENABLE_GPGME=OFF
     sources:
       - type: archive
-        url: https://poppler.freedesktop.org/poppler-26.03.0.tar.xz
-        sha256: 8b3c5e2a9f2ab4c3ec5029f28af1b433c6b71f0d1e7b3997aa561cf1c0ca4ebe
+        url: https://poppler.freedesktop.org/poppler-26.05.0.tar.xz
+        sha256: 6fef27ff04f37db43054c86bcdff6128c9fb1f6af4ef3c8b369a7e9abd68d0bb
         x-checker-data:
           type: anitya
           project-id: 3686
