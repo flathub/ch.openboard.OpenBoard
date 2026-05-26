@@ -25,14 +25,14 @@ cleanup:
   - /share/man
 cleanup-commands:
   - /app/cleanup-BaseApp.sh
-  
+
 modules:
   - name: quazip
     buildsystem: cmake-ninja
     sources:
       - type: archive
-        url: https://github.com/stachenov/quazip/archive/refs/tags/v1.5.tar.gz
-        sha256: 405b72b6e76c8987ff41a762523b8f64876ba406d8a831d268ee0b63f1369582
+        url: https://github.com/stachenov/quazip/archive/refs/tags/v1.6.tar.gz
+        sha256: 886126d2b1f803c9699af9d78bc7643e8268f3621f1aaa58e76f7a486161156d
         x-checker-data:
           type: anitya
           project-id: 4141
@@ -56,8 +56,8 @@ modules:
       - -DENABLE_GPGME=OFF
     sources:
       - type: archive
-        url: https://poppler.freedesktop.org/poppler-26.03.0.tar.xz
-        sha256: 8b3c5e2a9f2ab4c3ec5029f28af1b433c6b71f0d1e7b3997aa561cf1c0ca4ebe
+        url: https://poppler.freedesktop.org/poppler-26.05.0.tar.xz
+        sha256: 6fef27ff04f37db43054c86bcdff6128c9fb1f6af4ef3c8b369a7e9abd68d0bb
         x-checker-data:
           type: anitya
           project-id: 3686
